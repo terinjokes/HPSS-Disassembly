@@ -1,5 +1,12 @@
 SECTION "bank0", ROM0
-INCBIN "baserom.gbc",$0,$4000
+INCBIN "baserom.gbc",$0,$100
+    nop
+    jp Start
+
+    ds $150 - $104
+
+Start:
+INCBIN "baserom.gbc",$150,$4000-$150
 
 SECTION "bank1", ROMX, BANK[$1]
 INCBIN "baserom.gbc",$4000,$4000
