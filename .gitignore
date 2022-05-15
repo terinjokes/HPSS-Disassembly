@@ -1,0 +1,4 @@
+*.o
+*.gbc
+/inputs
+.gup/

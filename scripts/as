@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Script used to assemble Game Boy assembly into object files using rgbasm,
+# while also parsing generated make-dependency files to populate dependencies
+# for gup.
+#
+# This script is part of HPSS-Disassembly.
+#
+# Copyright 2022 Terin Stock
+# SPDX-License-Identifier: MPL-2.0
+
+if [ "$GUP_XTRACE" = "1" ]; then
+    set -x
+fi
+
+set -eu
+
+src="${2%.o}.asm"
+gup -u "$src"
+rgbasm --halt-without-nop --preserve-ld --export-all --output "$1" -M "$1".d "$src"
+
+for dep in $(awk '{print $2}' "$1".d); do
+    gup -u "$dep"
+done

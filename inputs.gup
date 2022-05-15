@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script searches the source repository for assembly files and generates
+# a file listing each assembly file, one per line. This target will always be
+# reran, but dependents are only marked stale if the content hash changes.
+#
+# This script is part of HPSS-Disassembly.
+#
+# Copyright 2022 Terin Stock
+# SPDX-License-Identifier: MPL-2.0
+
+set -eu
+
+find src -type f -name "*.asm" | sort > "$1"
+gup --always
+gup --contents "$1"

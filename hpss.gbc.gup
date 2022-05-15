@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Script reads the generated inputs list for RGBDS object files,
+# marks them as dependencies for gup, and then links into the ROM.
+#
+# This script is part of HPSS-Disassembly.
+#
+# Copyright 2022 Terin Stock
+# SPDX-License-Identifier: MPL-2.0
+
+if [ "$GUP_XTRACE" = "1" ]; then
+    set -x
+fi
+
+set -eu
+
+gup -u inputs
+readarray -t files < inputs
+objs=()
+
+
+for f in "${files[@]}"; do
+    objs+=("${f%.asm}.o")
+done
+
+gup -u "${objs[@]}"
+
+rgblink -o "$1" "${objs[@]}"
+rgbfix -v -p 255 "$1"
