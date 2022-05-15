@@ -4712,7 +4712,7 @@ jr_006_58c4:
     ld b, b                                       ; $591b: $40
 
 jr_006_591c:
-    ld bc, HeaderROMSize                          ; $591c: $01 $48 $01
+    ld bc, $0148                          ; $591c: $01 $48 $01
     ld d, b                                       ; $591f: $50
     ld bc, $0158                                  ; $5920: $01 $58 $01
     ld h, b                                       ; $5923: $60
@@ -4912,7 +4912,7 @@ jr_006_5a10:
     ld bc, $012c                                  ; $5a10: $01 $2c $01
     ld [hl], $01                                  ; $5a13: $36 $01
     ld b, b                                       ; $5a15: $40
-    ld bc, HeaderDestinationCode                  ; $5a16: $01 $4a $01
+    ld bc, $014a                  ; $5a16: $01 $4a $01
     ld d, h                                       ; $5a19: $54
     ld bc, $015e                                  ; $5a1a: $01 $5e $01
     ld l, b                                       ; $5a1d: $68

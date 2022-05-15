@@ -6636,7 +6636,7 @@ jr_094_5cff:
     db $fd                                        ; $5d03: $fd
     ld l, b                                       ; $5d04: $68
     dec b                                         ; $5d05: $05
-    ld bc, HeaderDestinationCode                  ; $5d06: $01 $4a $01
+    ld bc, $014a                                  ; $5d06: $01 $4a $01
     dec [hl]                                      ; $5d09: $35
     xor e                                         ; $5d0a: $ab
     ld d, l                                       ; $5d0b: $55
@@ -8168,7 +8168,7 @@ jr_094_63dc:
     dec de                                        ; $63e0: $1b
     inc [hl]                                      ; $63e1: $34
     nop                                           ; $63e2: $00
-    ld de, HeaderTitle                            ; $63e3: $11 $34 $01
+    ld de, $0134                                  ; $63e3: $11 $34 $01
     ld [$0000], sp                                ; $63e6: $08 $00 $00
     and l                                         ; $63e9: $a5
     and b                                         ; $63ea: $a0
@@ -8178,7 +8178,7 @@ jr_094_63dc:
     xor a                                         ; $63ee: $af
     dec bc                                        ; $63ef: $0b
     nop                                           ; $63f0: $00
-    ld bc, HeaderSGBFlag                          ; $63f1: $01 $46 $01
+    ld bc, $0146                                  ; $63f1: $01 $46 $01
     inc bc                                        ; $63f4: $03
     ld bc, $0106                                  ; $63f5: $01 $06 $01
     dec bc                                        ; $63f8: $0b
@@ -8221,7 +8221,7 @@ jr_094_63dc:
 
     and $c6                                       ; $642d: $e6 $c6
     sub a                                         ; $642f: $97
-    ld bc, HeaderLogo                             ; $6430: $01 $04 $01
+    ld bc, $0104                                  ; $6430: $01 $04 $01
     inc hl                                        ; $6433: $23
     ld bc, $0063                                  ; $6434: $01 $63 $00
     ld b, h                                       ; $6437: $44

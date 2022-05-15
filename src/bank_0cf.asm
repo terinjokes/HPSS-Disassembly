@@ -1362,7 +1362,7 @@ jr_0cf_459b:
     ld a, a                                       ; $45c1: $7f
     ld [bc], a                                    ; $45c2: $02
     ld h, b                                       ; $45c3: $60
-    ld bc, HeaderNewLicenseeCode                  ; $45c4: $01 $44 $01
+    ld bc, $0144                                  ; $45c4: $01 $44 $01
     inc l                                         ; $45c7: $2c
     ld l, c                                       ; $45c8: $69
     ld a, l                                       ; $45c9: $7d
@@ -1381,7 +1381,7 @@ jr_0cf_459b:
     rst $10                                       ; $45d8: $d7
     ld a, a                                       ; $45d9: $7f
     ldh a, [$7e]                                  ; $45da: $f0 $7e
-    ld bc, HeaderNewLicenseeCode                  ; $45dc: $01 $44 $01
+    ld bc, $0144                                  ; $45dc: $01 $44 $01
     inc l                                         ; $45df: $2c
     rst $10                                       ; $45e0: $d7
     ld a, a                                       ; $45e1: $7f

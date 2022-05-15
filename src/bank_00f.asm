@@ -5527,38 +5527,38 @@ jr_00f_5adf:
 jr_00f_5c7e:
     ld h, b                                       ; $5c7e: $60
     inc de                                        ; $5c7f: $13
-    ld bc, HeaderLogo                             ; $5c80: $01 $04 $01
+    ld bc, $0104                                  ; $5c80: $01 $04 $01
     nop                                           ; $5c83: $00
     nop                                           ; $5c84: $00
     dec bc                                        ; $5c85: $0b
     db $10                                        ; $5c86: $10
     ld d, b                                       ; $5c87: $50
     inc de                                        ; $5c88: $13
-    ld bc, HeaderLogo                             ; $5c89: $01 $04 $01
+    ld bc, $0104                                  ; $5c89: $01 $04 $01
     nop                                           ; $5c8c: $00
     nop                                           ; $5c8d: $00
     dec bc                                        ; $5c8e: $0b
     db $10                                        ; $5c8f: $10
     ld b, b                                       ; $5c90: $40
     inc de                                        ; $5c91: $13
-    ld bc, HeaderLogo                             ; $5c92: $01 $04 $01
+    ld bc, $0104                                  ; $5c92: $01 $04 $01
     nop                                           ; $5c95: $00
     nop                                           ; $5c96: $00
     add hl, bc                                    ; $5c97: $09
     db $10                                        ; $5c98: $10
     jr nc, @+$15                                  ; $5c99: $30 $13
 
-    ld bc, HeaderLogo                             ; $5c9b: $01 $04 $01
+    ld bc, $0104                                  ; $5c9b: $01 $04 $01
     nop                                           ; $5c9e: $00
     nop                                           ; $5c9f: $00
     ld [$2010], sp                                ; $5ca0: $08 $10 $20
     inc de                                        ; $5ca3: $13
-    ld bc, HeaderLogo                             ; $5ca4: $01 $04 $01
+    ld bc, $0104                                  ; $5ca4: $01 $04 $01
     nop                                           ; $5ca7: $00
     nop                                           ; $5ca8: $00
     ld [$1010], sp                                ; $5ca9: $08 $10 $10
     inc de                                        ; $5cac: $13
-    ld bc, HeaderLogo                             ; $5cad: $01 $04 $01
+    ld bc, $0104                                  ; $5cad: $01 $04 $01
     nop                                           ; $5cb0: $00
     nop                                           ; $5cb1: $00
     ld b, $0d                                     ; $5cb2: $06 $0d
@@ -5945,7 +5945,7 @@ jr_00f_5ef8:
     add hl, bc                                    ; $5ef9: $09
     rrca                                          ; $5efa: $0f
     inc c                                         ; $5efb: $0c
-    ld bc, HeaderLogo                             ; $5efc: $01 $04 $01
+    ld bc, $0104                                  ; $5efc: $01 $04 $01
     nop                                           ; $5eff: $00
     nop                                           ; $5f00: $00
     ld a, $0d                                     ; $5f01: $3e $0d
@@ -7200,7 +7200,7 @@ jr_00f_6442:
     ld a, [bc]                                    ; $67a7: $0a
     ld [bc], a                                    ; $67a8: $02
     inc c                                         ; $67a9: $0c
-    ld bc, HeaderLogo                             ; $67aa: $01 $04 $01
+    ld bc, $0104                                  ; $67aa: $01 $04 $01
     nop                                           ; $67ad: $00
     nop                                           ; $67ae: $00
     nop                                           ; $67af: $00

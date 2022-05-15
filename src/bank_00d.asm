@@ -6800,7 +6800,7 @@ jr_00d_5e54:
     rrca                                          ; $5e6b: $0f
     ld b, h                                       ; $5e6c: $44
     ld bc, $112c                                  ; $5e6d: $01 $2c $11
-    ld bc, HeaderComplementCheck                  ; $5e70: $01 $4d $01
+    ld bc, $014d                                  ; $5e70: $01 $4d $01
     nop                                           ; $5e73: $00
     ld d, a                                       ; $5e74: $57
     nop                                           ; $5e75: $00

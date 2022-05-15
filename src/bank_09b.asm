@@ -4054,7 +4054,7 @@ jr_09b_5155:
     ccf                                           ; $51a3: $3f
     ccf                                           ; $51a4: $3f
     db $eb                                        ; $51a5: $eb
-    ld de, HeaderMaskROMVersion                   ; $51a6: $11 $4c $01
+    ld de, $014c                   ; $51a6: $11 $4c $01
     nop                                           ; $51a9: $00
     db $fd                                        ; $51aa: $fd
     ei                                            ; $51ab: $fb
@@ -4272,7 +4272,7 @@ jr_09b_5258:
     ld d, h                                       ; $5296: $54
     dec bc                                        ; $5297: $0b
     xor a                                         ; $5298: $af
-    ld bc, HeaderGlobalChecksum                   ; $5299: $01 $4e $01
+    ld bc, $014e                   ; $5299: $01 $4e $01
     nop                                           ; $529c: $00
     rla                                           ; $529d: $17
     ld bc, $0182                                  ; $529e: $01 $82 $01
@@ -6242,7 +6242,7 @@ Call_09b_5b27:
     ld [hl+], a                                   ; $5b3e: $22
     ld [$03ad], sp                                ; $5b3f: $08 $ad $03
     ld b, $00                                     ; $5b42: $06 $00
-    ld bc, HeaderOldLicenseeCode                  ; $5b44: $01 $4b $01
+    ld bc, $014b                  ; $5b44: $01 $4b $01
     sub [hl]                                      ; $5b47: $96
     ld bc, $017e                                  ; $5b48: $01 $7e $01
     xor l                                         ; $5b4b: $ad
@@ -7596,7 +7596,7 @@ jr_09b_60db:
     and a                                         ; $6140: $a7
     ld c, $02                                     ; $6141: $0e $02
     nop                                           ; $6143: $00
-    ld bc, HeaderLogo                             ; $6144: $01 $04 $01
+    ld bc, $0104                             ; $6144: $01 $04 $01
     push de                                       ; $6147: $d5
     xor d                                         ; $6148: $aa
     adc e                                         ; $6149: $8b

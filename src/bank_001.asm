@@ -3957,7 +3957,7 @@ jr_001_536a:
     ld bc, $082c                                  ; $53cb: $01 $2c $08
     ld bc, $0d00                                  ; $53ce: $01 $00 $0d
     ld c, d                                       ; $53d1: $4a
-    ld bc, HeaderMaskROMVersion                   ; $53d2: $01 $4c $01
+    ld bc, $014c                   ; $53d2: $01 $4c $01
     inc l                                         ; $53d5: $2c
     ld [$0410], sp                                ; $53d6: $08 $10 $04
     dec bc                                        ; $53d9: $0b

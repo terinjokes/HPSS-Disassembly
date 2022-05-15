@@ -10775,7 +10775,7 @@ jr_0c4_6e96:
     ld bc, $8131                                  ; $6ec4: $01 $31 $81
     adc b                                         ; $6ec7: $88
     ld bc, $0115                                  ; $6ec8: $01 $15 $01
-    ld [HeaderMaskROMVersion], sp                 ; $6ecb: $08 $4c $01
+    ld [$014c], sp                 ; $6ecb: $08 $4c $01
     ld d, l                                       ; $6ece: $55
     ld bc, $0070                                  ; $6ecf: $01 $70 $00
     or $03                                        ; $6ed2: $f6 $03

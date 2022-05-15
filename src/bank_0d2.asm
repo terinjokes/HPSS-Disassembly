@@ -2130,7 +2130,7 @@ jr_0d2_4b0b:
     ld e, a                                       ; $4b7b: $5f
     inc bc                                        ; $4b7c: $03
     dec l                                         ; $4b7d: $2d
-    ld bc, HeaderComplementCheck                  ; $4b7e: $01 $4d $01
+    ld bc, $014d                  ; $4b7e: $01 $4d $01
     ld bc, $8700                                  ; $4b81: $01 $00 $87
     ld e, c                                       ; $4b84: $59
     ld e, l                                       ; $4b85: $5d
@@ -5725,7 +5725,7 @@ Call_0d2_5b48:
     ld [bc], a                                    ; $5c41: $02
     nop                                           ; $5c42: $00
     sbc b                                         ; $5c43: $98
-    ld bc, HeaderNewLicenseeCode                  ; $5c44: $01 $44 $01
+    ld bc, $0144                  ; $5c44: $01 $44 $01
     ld e, [hl]                                    ; $5c47: $5e
     dec bc                                        ; $5c48: $0b
     add h                                         ; $5c49: $84
@@ -11223,7 +11223,7 @@ jr_0d2_7801:
     inc bc                                        ; $783c: $03
     rst $20                                       ; $783d: $e7
     inc e                                         ; $783e: $1c
-    ld hl, HeaderLogo                             ; $783f: $21 $04 $01
+    ld hl, $0104                             ; $783f: $21 $04 $01
     nop                                           ; $7842: $00
     ld d, d                                       ; $7843: $52
     ld d, d                                       ; $7844: $52

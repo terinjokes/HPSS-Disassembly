@@ -8029,7 +8029,7 @@ jr_09c_6359:
     add b                                         ; $6376: $80
     inc b                                         ; $6377: $04
     ld [$3e3d], sp                                ; $6378: $08 $3d $3e
-    ld bc, HeaderManufacturerCode                 ; $637b: $01 $3f $01
+    ld bc, $013f                 ; $637b: $01 $3f $01
     ld a, $c1                                     ; $637e: $3e $c1
     ld hl, sp-$10                                 ; $6380: $f8 $f0
     jr jr_09c_6359                                ; $6382: $18 $d5
@@ -8863,7 +8863,7 @@ jr_09c_66df:
     ld b, c                                       ; $66f0: $41
     cp a                                          ; $66f1: $bf
     ld de, $7f83                                  ; $66f2: $11 $83 $7f
-    ld bc, HeaderComplementCheck                  ; $66f5: $01 $4d $01
+    ld bc, $014d                  ; $66f5: $01 $4d $01
     ld bc, $abff                                  ; $66f8: $01 $ff $ab
     adc l                                         ; $66fb: $8d
     inc bc                                        ; $66fc: $03
@@ -10816,7 +10816,7 @@ jr_09c_6f52:
     nop                                           ; $6f89: $00
     rst $38                                       ; $6f8a: $ff
     rst $18                                       ; $6f8b: $df
-    ld bc, HeaderTitle                            ; $6f8c: $01 $34 $01
+    ld bc, $0134                            ; $6f8c: $01 $34 $01
     daa                                           ; $6f8f: $27
     reti                                          ; $6f90: $d9
 
@@ -13220,7 +13220,7 @@ jr_09c_79ae:
     nop                                           ; $79ce: $00
     rst $38                                       ; $79cf: $ff
     rst $18                                       ; $79d0: $df
-    ld bc, HeaderTitle                            ; $79d1: $01 $34 $01
+    ld bc, $0134                            ; $79d1: $01 $34 $01
     daa                                           ; $79d4: $27
     reti                                          ; $79d5: $d9
 

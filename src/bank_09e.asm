@@ -2736,7 +2736,7 @@ jr_09e_4bb8:
     ld e, d                                       ; $4bf0: $5a
     nop                                           ; $4bf1: $00
     or l                                          ; $4bf2: $b5
-    ld bc, HeaderRAMSize                          ; $4bf3: $01 $49 $01
+    ld bc, $0149                                  ; $4bf3: $01 $49 $01
     nop                                           ; $4bf6: $00
     sub e                                         ; $4bf7: $93
     ld bc, $e856                                  ; $4bf8: $01 $56 $e8
@@ -4905,7 +4905,7 @@ jr_09e_5571:
     nop                                           ; $5589: $00
     ld l, $01                                     ; $558a: $2e $01
     or h                                          ; $558c: $b4
-    ld bc, HeaderDestinationCode                  ; $558d: $01 $4a $01
+    ld bc, $014a                  ; $558d: $01 $4a $01
     ld de, $4000                                  ; $5590: $11 $00 $40
     ld [hl+], a                                   ; $5593: $22
     ld a, h                                       ; $5594: $7c
@@ -11223,7 +11223,7 @@ Jump_09e_70e9:
     ldh [$1f], a                                  ; $7117: $e0 $1f
     ei                                            ; $7119: $fb
     inc b                                         ; $711a: $04
-    ld a, [HeaderLogo]                            ; $711b: $fa $04 $01
+    ld a, [$0104]                            ; $711b: $fa $04 $01
     cp e                                          ; $711e: $bb
     inc b                                         ; $711f: $04
     ld e, d                                       ; $7120: $5a
@@ -11271,7 +11271,7 @@ Jump_09e_70e9:
     cp $01                                        ; $715b: $fe $01
     cp $01                                        ; $715d: $fe $01
     xor d                                         ; $715f: $aa
-    ld bc, HeaderSGBFlag                          ; $7160: $01 $46 $01
+    ld bc, $0146                          ; $7160: $01 $46 $01
     jr jr_09e_71ba                                ; $7163: $18 $55
 
     ld [$ce38], sp                                ; $7165: $08 $38 $ce

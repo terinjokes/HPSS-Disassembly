@@ -5661,7 +5661,7 @@ jr_073_578c:
     jr nz, jr_073_5780                            ; $57e1: $20 $9d
 
 jr_073_57e3:
-    ld bc, HeaderManufacturerCode                 ; $57e3: $01 $3f $01
+    ld bc, $013f                 ; $57e3: $01 $3f $01
     ccf                                           ; $57e6: $3f
     inc bc                                        ; $57e7: $03
     inc bc                                        ; $57e8: $03

@@ -1374,7 +1374,7 @@ jr_08f_45a4:
     nop                                           ; $45f5: $00
     ld bc, $0128                                  ; $45f6: $01 $28 $01
     add hl, hl                                    ; $45f9: $29
-    ld bc, HeaderTitle                            ; $45fa: $01 $34 $01
+    ld bc, $0134                                  ; $45fa: $01 $34 $01
     dec [hl]                                      ; $45fd: $35
     add b                                         ; $45fe: $80
     ld a, b                                       ; $45ff: $78
@@ -1422,7 +1422,7 @@ jr_08f_463b:
     ld bc, $0145                                  ; $4645: $01 $45 $01
     ld b, [hl]                                    ; $4648: $46
     nop                                           ; $4649: $00
-    ld bc, HeaderCartridgeType                    ; $464a: $01 $47 $01
+    ld bc, $0147                                  ; $464a: $01 $47 $01
     ld d, b                                       ; $464d: $50
     ld bc, $0151                                  ; $464e: $01 $51 $01
     ld d, d                                       ; $4651: $52
@@ -1435,10 +1435,10 @@ jr_08f_463b:
     nop                                           ; $465c: $00
     ld bc, $013e                                  ; $465d: $01 $3e $01
     ccf                                           ; $4660: $3f
-    ld bc, HeaderROMSize                          ; $4661: $01 $48 $01
+    ld bc, $0148                                  ; $4661: $01 $48 $01
     ld c, c                                       ; $4664: $49
     nop                                           ; $4665: $00
-    ld bc, HeaderDestinationCode                  ; $4666: $01 $4a $01
+    ld bc, $014a                                  ; $4666: $01 $4a $01
     ld c, e                                       ; $4669: $4b
     ld bc, $0154                                  ; $466a: $01 $54 $01
     ld d, l                                       ; $466d: $55
@@ -1453,9 +1453,9 @@ jr_08f_463b:
     ld bc, $0141                                  ; $467b: $01 $41 $01
     ld b, d                                       ; $467e: $42
     ld bc, $0043                                  ; $467f: $01 $43 $00
-    ld bc, HeaderMaskROMVersion                   ; $4682: $01 $4c $01
+    ld bc, $014c                                  ; $4682: $01 $4c $01
     ld c, l                                       ; $4685: $4d
-    ld bc, HeaderGlobalChecksum                   ; $4686: $01 $4e $01
+    ld bc, $014e                                  ; $4686: $01 $4e $01
     ld c, a                                       ; $4689: $4f
     jr nc, jr_08f_468d                            ; $468a: $30 $01
 
@@ -2026,7 +2026,7 @@ jr_08f_48d4:
     nop                                           ; $4908: $00
     ld a, [$0200]                                 ; $4909: $fa $00 $02
     ld bc, $0003                                  ; $490c: $01 $03 $00
-    ld bc, HeaderLogo                             ; $490f: $01 $04 $01
+    ld bc, $0104                                  ; $490f: $01 $04 $01
     dec b                                         ; $4912: $05
     ld bc, $0110                                  ; $4913: $01 $10 $01
     ld de, $0100                                  ; $4916: $11 $00 $01
@@ -4163,7 +4163,7 @@ jr_08f_526b:
     ld bc, $0120                                  ; $5291: $01 $20 $01
 
 jr_08f_5294:
-    ld hl, HeaderLogo                             ; $5294: $21 $04 $01
+    ld hl, $0104                                  ; $5294: $21 $04 $01
     ld [hl+], a                                   ; $5297: $22
     ld bc, $0125                                  ; $5298: $01 $25 $01
     jr @+$0c                                      ; $529b: $18 $0a
@@ -4183,7 +4183,7 @@ jr_08f_5294:
     ccf                                           ; $52b2: $3f
     ld bc, $0140                                  ; $52b3: $01 $40 $01
     ld c, l                                       ; $52b6: $4d
-    ld bc, HeaderGlobalChecksum                   ; $52b7: $01 $4e $01
+    ld bc, $014e                                  ; $52b7: $01 $4e $01
     nop                                           ; $52ba: $00
     ld c, a                                       ; $52bb: $4f
     ld bc, $0150                                  ; $52bc: $01 $50 $01
@@ -4198,7 +4198,7 @@ jr_08f_5294:
     nop                                           ; $52cd: $00
     ld bc, $012a                                  ; $52ce: $01 $2a $01
     dec hl                                        ; $52d1: $2b
-    ld bc, HeaderTitle                            ; $52d2: $01 $34 $01
+    ld bc, $0134                                  ; $52d2: $01 $34 $01
     dec [hl]                                      ; $52d5: $35
     nop                                           ; $52d6: $00
     ld bc, $0136                                  ; $52d7: $01 $36 $01
@@ -4206,7 +4206,7 @@ jr_08f_5294:
     ld bc, $0141                                  ; $52db: $01 $41 $01
     ld b, d                                       ; $52de: $42
     nop                                           ; $52df: $00
-    ld bc, HeaderCGBFlag                          ; $52e0: $01 $43 $01
+    ld bc, $0143                                  ; $52e0: $01 $43 $01
     ld b, h                                       ; $52e3: $44
     ld bc, $0151                                  ; $52e4: $01 $51 $01
     ld [hl], c                                    ; $52e7: $71
@@ -4228,10 +4228,10 @@ jr_08f_52ff:
     add hl, sp                                    ; $52ff: $39
     ld bc, $013a                                  ; $5300: $01 $3a $01
     ld b, l                                       ; $5303: $45
-    ld bc, HeaderSGBFlag                          ; $5304: $01 $46 $01
+    ld bc, $0146                                  ; $5304: $01 $46 $01
     nop                                           ; $5307: $00
     ld b, a                                       ; $5308: $47
-    ld bc, HeaderROMSize                          ; $5309: $01 $48 $01
+    ld bc, $0148                                  ; $5309: $01 $48 $01
     ld d, e                                       ; $530c: $53
     ld bc, $0154                                  ; $530d: $01 $54 $01
     ld [bc], a                                    ; $5310: $02
@@ -4249,7 +4249,7 @@ jr_08f_52ff:
     nop                                           ; $5324: $00
     ld bc, $013c                                  ; $5325: $01 $3c $01
     ld c, c                                       ; $5328: $49
-    ld bc, HeaderDestinationCode                  ; $5329: $01 $4a $01
+    ld bc, $014a                                  ; $5329: $01 $4a $01
     ld c, e                                       ; $532c: $4b
     jr nz, jr_08f_5330                            ; $532d: $20 $01
 
@@ -7703,7 +7703,7 @@ jr_08f_6177:
     nop                                           ; $61c5: $00
     or $00                                        ; $61c6: $f6 $00
     inc bc                                        ; $61c8: $03
-    ld bc, HeaderLogo                             ; $61c9: $01 $04 $01
+    ld bc, $0104                                  ; $61c9: $01 $04 $01
     dec b                                         ; $61cc: $05
     ld bc, $0600                                  ; $61cd: $01 $00 $06
     ld bc, $0113                                  ; $61d0: $01 $13 $01
@@ -7727,10 +7727,10 @@ jr_08f_6177:
     dec a                                         ; $61f3: $3d
     ld bc, $013e                                  ; $61f4: $01 $3e $01
     ld c, e                                       ; $61f7: $4b
-    ld bc, HeaderMaskROMVersion                   ; $61f8: $01 $4c $01
+    ld bc, $014c                                  ; $61f8: $01 $4c $01
     nop                                           ; $61fb: $00
     ld c, l                                       ; $61fc: $4d
-    ld bc, HeaderGlobalChecksum                   ; $61fd: $01 $4e $01
+    ld bc, $014e                                  ; $61fd: $01 $4e $01
     ld e, e                                       ; $6200: $5b
     ld bc, $015c                                  ; $6201: $01 $5c $01
     nop                                           ; $6204: $00
@@ -7752,7 +7752,7 @@ jr_08f_6177:
     jr nc, @+$03                                  ; $6220: $30 $01
 
     ld sp, $3201                                  ; $6222: $31 $01 $32
-    ld bc, HeaderManufacturerCode                 ; $6225: $01 $3f $01
+    ld bc, $013f                                  ; $6225: $01 $3f $01
     nop                                           ; $6228: $00
     ld b, b                                       ; $6229: $40
     ld bc, $0141                                  ; $622a: $01 $41 $01
@@ -7780,14 +7780,14 @@ jr_08f_6177:
     nop                                           ; $6252: $00
     adc d                                         ; $6253: $8a
     ld bc, $3300                                  ; $6254: $01 $00 $33
-    ld bc, HeaderTitle                            ; $6257: $01 $34 $01
+    ld bc, $0134                                  ; $6257: $01 $34 $01
     dec [hl]                                      ; $625a: $35
     ld bc, $0136                                  ; $625b: $01 $36 $01
     nop                                           ; $625e: $00
     ld b, e                                       ; $625f: $43
-    ld bc, HeaderNewLicenseeCode                  ; $6260: $01 $44 $01
+    ld bc, $0144                                  ; $6260: $01 $44 $01
     ld b, l                                       ; $6263: $45
-    ld bc, HeaderSGBFlag                          ; $6264: $01 $46 $01
+    ld bc, $0146                                  ; $6264: $01 $46 $01
     nop                                           ; $6267: $00
     ld d, e                                       ; $6268: $53
     ld bc, $0154                                  ; $6269: $01 $54 $01
@@ -7817,9 +7817,9 @@ jr_08f_6177:
 
 jr_08f_6293:
     ld bc, $3a00                                  ; $6293: $01 $00 $3a
-    ld bc, HeaderCartridgeType                    ; $6296: $01 $47 $01
+    ld bc, $0147                                  ; $6296: $01 $47 $01
     ld c, b                                       ; $6299: $48
-    ld bc, HeaderRAMSize                          ; $629a: $01 $49 $01
+    ld bc, $0149                                  ; $629a: $01 $49 $01
     nop                                           ; $629d: $00
     ld c, d                                       ; $629e: $4a
     ld bc, $0157                                  ; $629f: $01 $57 $01
@@ -8527,7 +8527,7 @@ jr_08f_6599:
     nop                                           ; $65e9: $00
     ld [bc], a                                    ; $65ea: $02
     ld bc, $0300                                  ; $65eb: $01 $00 $03
-    ld bc, HeaderLogo                             ; $65ee: $01 $04 $01
+    ld bc, $0104                                  ; $65ee: $01 $04 $01
     ccf                                           ; $65f1: $3f
     nop                                           ; $65f2: $00
     db $10                                        ; $65f3: $10
@@ -8576,7 +8576,7 @@ jr_08f_6599:
     ld bc, $0142                                  ; $6644: $01 $42 $01
     nop                                           ; $6647: $00
     ld b, e                                       ; $6648: $43
-    ld bc, HeaderNewLicenseeCode                  ; $6649: $01 $44 $01
+    ld bc, $0144                                  ; $6649: $01 $44 $01
     ld d, b                                       ; $664c: $50
     ld bc, $0151                                  ; $664d: $01 $51 $01
     jr nz, jr_08f_66a4                            ; $6650: $20 $52
@@ -8605,8 +8605,8 @@ jr_08f_666b:
     add hl, sp                                    ; $6676: $39
     ld bc, $0145                                  ; $6677: $01 $45 $01
     ld b, [hl]                                    ; $667a: $46
-    ld bc, HeaderCartridgeType                    ; $667b: $01 $47 $01
-    ld bc, HeaderROMSize                          ; $667e: $01 $48 $01
+    ld bc, $0147                                  ; $667b: $01 $47 $01
+    ld bc, $0148                                  ; $667e: $01 $48 $01
     ld d, e                                       ; $6681: $53
     ld bc, $0154                                  ; $6682: $01 $54 $01
     ld c, [hl]                                    ; $6685: $4e
@@ -8633,9 +8633,9 @@ jr_08f_66a4:
     ld bc, $013d                                  ; $66a8: $01 $3d $01
     ld c, c                                       ; $66ab: $49
     nop                                           ; $66ac: $00
-    ld bc, HeaderDestinationCode                  ; $66ad: $01 $4a $01
+    ld bc, $014a                                  ; $66ad: $01 $4a $01
     ld c, e                                       ; $66b0: $4b
-    ld bc, HeaderMaskROMVersion                   ; $66b1: $01 $4c $01
+    ld bc, $014c                                  ; $66b1: $01 $4c $01
     ld d, l                                       ; $66b4: $55
     db $10                                        ; $66b5: $10
     ld bc, $0156                                  ; $66b6: $01 $56 $01
@@ -9205,7 +9205,7 @@ Call_08f_6910:
     ld [bc], a                                    ; $6955: $02
     or $00                                        ; $6956: $f6 $00
     inc bc                                        ; $6958: $03
-    ld bc, HeaderLogo                             ; $6959: $01 $04 $01
+    ld bc, $0104                                  ; $6959: $01 $04 $01
     sub b                                         ; $695c: $90
     ld [$00b8], sp                                ; $695d: $08 $b8 $00
     nop                                           ; $6960: $00
@@ -9362,9 +9362,9 @@ jr_08f_69eb:
     ld bc, $013a                                  ; $6a1a: $01 $3a $01
     dec sp                                        ; $6a1d: $3b
     ld bc, $0048                                  ; $6a1e: $01 $48 $00
-    ld bc, HeaderRAMSize                          ; $6a21: $01 $49 $01
+    ld bc, $0149                                  ; $6a21: $01 $49 $01
     ld c, d                                       ; $6a24: $4a
-    ld bc, HeaderOldLicenseeCode                  ; $6a25: $01 $4b $01
+    ld bc, $014b                                  ; $6a25: $01 $4b $01
     ld e, b                                       ; $6a28: $58
     nop                                           ; $6a29: $00
     ld bc, $0159                                  ; $6a2a: $01 $59 $01
@@ -9388,7 +9388,7 @@ jr_08f_69eb:
     ld a, $01                                     ; $6a51: $3e $01
     ccf                                           ; $6a53: $3f
     ld bc, $004c                                  ; $6a54: $01 $4c $00
-    ld bc, HeaderComplementCheck                  ; $6a57: $01 $4d $01
+    ld bc, $014d                                  ; $6a57: $01 $4d $01
     ld c, [hl]                                    ; $6a5a: $4e
     ld bc, $014f                                  ; $6a5b: $01 $4f $01
     ld e, e                                       ; $6a5e: $5b
@@ -9407,7 +9407,7 @@ jr_08f_69eb:
     ld bc, $0132                                  ; $6a77: $01 $32 $01
     inc sp                                        ; $6a7a: $33
     nop                                           ; $6a7b: $00
-    ld bc, HeaderTitle                            ; $6a7c: $01 $34 $01
+    ld bc, $0134                                  ; $6a7c: $01 $34 $01
     dec [hl]                                      ; $6a7f: $35
     ld bc, $0140                                  ; $6a80: $01 $40 $01
     ld b, c                                       ; $6a83: $41
@@ -9444,7 +9444,7 @@ jr_08f_69eb:
     nop                                           ; $6ab3: $00
     ld bc, $0145                                  ; $6ab4: $01 $45 $01
     ld b, [hl]                                    ; $6ab7: $46
-    ld bc, HeaderCartridgeType                    ; $6ab8: $01 $47 $01
+    ld bc, $0147                                  ; $6ab8: $01 $47 $01
     ld d, h                                       ; $6abb: $54
     nop                                           ; $6abc: $00
     ld bc, $0155                                  ; $6abd: $01 $55 $01

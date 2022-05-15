@@ -163,7 +163,7 @@ jr_0f8_406e:
     inc b                                         ; $40b1: $04
     nop                                           ; $40b2: $00
     inc b                                         ; $40b3: $04
-    ld [HeaderMaskROMVersion], sp                 ; $40b4: $08 $4c $01
+    ld [$014c], sp                                ; $40b4: $08 $4c $01
     ld e, c                                       ; $40b7: $59
     inc b                                         ; $40b8: $04
     ld a, d                                       ; $40b9: $7a
@@ -346,7 +346,7 @@ jr_0f8_4142:
     inc b                                         ; $418d: $04
     nop                                           ; $418e: $00
     inc b                                         ; $418f: $04
-    ld [HeaderMaskROMVersion], sp                 ; $4190: $08 $4c $01
+    ld [$014c], sp                                ; $4190: $08 $4c $01
     ld c, h                                       ; $4193: $4c
     ld bc, $005d                                  ; $4194: $01 $5d $00
     ld l, d                                       ; $4197: $6a
@@ -10327,7 +10327,7 @@ jr_0f8_6e23:
     ld [bc], a                                    ; $6e40: $02
     inc b                                         ; $6e41: $04
     adc d                                         ; $6e42: $8a
-    ld [HeaderROMSize], sp                        ; $6e43: $08 $48 $01
+    ld [$0148], sp                                ; $6e43: $08 $48 $01
     pop af                                        ; $6e46: $f1
     ld b, b                                       ; $6e47: $40
     cp b                                          ; $6e48: $b8

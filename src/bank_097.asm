@@ -1567,7 +1567,7 @@ jr_097_46fe:
     and b                                         ; $4715: $a0
     inc b                                         ; $4716: $04
     nop                                           ; $4717: $00
-    ld bc, HeaderTitle                            ; $4718: $01 $34 $01
+    ld bc, $0134                                  ; $4718: $01 $34 $01
     xor c                                         ; $471b: $a9
     rst $00                                       ; $471c: $c7
     ld [hl], l                                    ; $471d: $75
@@ -2815,7 +2815,7 @@ jr_097_4c81:
     call nc, $f802                                ; $4cc8: $d4 $02 $f8
     ld h, l                                       ; $4ccb: $65
     ld hl, sp+$41                                 ; $4ccc: $f8 $41
-    ld de, HeaderSGBFlag                          ; $4cce: $11 $46 $01
+    ld de, $0146                                  ; $4cce: $11 $46 $01
     ldh [$e0], a                                  ; $4cd1: $e0 $e0
     ld [hl], d                                    ; $4cd3: $72
     dec de                                        ; $4cd4: $1b
@@ -10372,7 +10372,7 @@ jr_097_6e95:
     ei                                            ; $6ea1: $fb
     ld h, l                                       ; $6ea2: $65
     ld a, e                                       ; $6ea3: $7b
-    ld hl, HeaderManufacturerCode                 ; $6ea4: $21 $3f $01
+    ld hl, $013f                                  ; $6ea4: $21 $3f $01
     db $10                                        ; $6ea7: $10
     rst $38                                       ; $6ea8: $ff
     jr z, @+$01                                   ; $6ea9: $28 $ff
@@ -13368,7 +13368,7 @@ jr_097_7bf3:
     cp $f9                                        ; $7bf4: $fe $f9
     dec de                                        ; $7bf6: $1b
     ld bc, $82e1                                  ; $7bf7: $01 $e1 $82
-    ld bc, HeaderCartridgeType                    ; $7bfa: $01 $47 $01
+    ld bc, $0147                                  ; $7bfa: $01 $47 $01
     ld hl, sp+$07                                 ; $7bfd: $f8 $07
     nop                                           ; $7bff: $00
     dec hl                                        ; $7c00: $2b

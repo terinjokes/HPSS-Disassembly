@@ -368,7 +368,7 @@ jr_0eb_4109:
     rst $38                                       ; $41a8: $ff
     ld bc, $017f                                  ; $41a9: $01 $7f $01
     ld a, a                                       ; $41ac: $7f
-    ld bc, HeaderManufacturerCode                 ; $41ad: $01 $3f $01
+    ld bc, $013f                 ; $41ad: $01 $3f $01
     ld e, $01                                     ; $41b0: $1e $01
     ld c, $01                                     ; $41b2: $0e $01
     inc bc                                        ; $41b4: $03
@@ -1263,7 +1263,7 @@ jr_0eb_4527:
     rst $38                                       ; $45c6: $ff
     ld bc, $017f                                  ; $45c7: $01 $7f $01
     ld a, a                                       ; $45ca: $7f
-    ld bc, HeaderManufacturerCode                 ; $45cb: $01 $3f $01
+    ld bc, $013f                 ; $45cb: $01 $3f $01
     ld e, $01                                     ; $45ce: $1e $01
     ld c, $01                                     ; $45d0: $0e $01
     inc bc                                        ; $45d2: $03
@@ -2143,7 +2143,7 @@ jr_0eb_4946:
     rst $38                                       ; $49e5: $ff
     ld bc, $017f                                  ; $49e6: $01 $7f $01
     ld a, a                                       ; $49e9: $7f
-    ld bc, HeaderManufacturerCode                 ; $49ea: $01 $3f $01
+    ld bc, $013f                 ; $49ea: $01 $3f $01
     ld e, $01                                     ; $49ed: $1e $01
     ld c, $01                                     ; $49ef: $0e $01
     inc bc                                        ; $49f1: $03
@@ -3015,7 +3015,7 @@ jr_0eb_4d64:
     rst $38                                       ; $4e04: $ff
     ld bc, $017f                                  ; $4e05: $01 $7f $01
     ld a, a                                       ; $4e08: $7f
-    ld bc, HeaderManufacturerCode                 ; $4e09: $01 $3f $01
+    ld bc, $013f                 ; $4e09: $01 $3f $01
     ld e, $01                                     ; $4e0c: $1e $01
     ld c, $01                                     ; $4e0e: $0e $01
     inc bc                                        ; $4e10: $03
@@ -5937,7 +5937,7 @@ jr_0eb_5c1a:
     inc d                                         ; $5d06: $14
     nop                                           ; $5d07: $00
     dec bc                                        ; $5d08: $0b
-    ld bc, HeaderLogo                             ; $5d09: $01 $04 $01
+    ld bc, $0104                             ; $5d09: $01 $04 $01
     ld [bc], a                                    ; $5d0c: $02
     nop                                           ; $5d0d: $00
     dec b                                         ; $5d0e: $05
@@ -9813,7 +9813,7 @@ jr_0eb_6e7c:
     add a                                         ; $6e83: $87
     inc h                                         ; $6e84: $24
     ld [$3024], sp                                ; $6e85: $08 $24 $30
-    ld bc, HeaderTitle                            ; $6e88: $01 $34 $01
+    ld bc, $0134                            ; $6e88: $01 $34 $01
     inc b                                         ; $6e8b: $04
     nop                                           ; $6e8c: $00
     add h                                         ; $6e8d: $84

@@ -1909,7 +1909,7 @@ jr_0a6_4851:
     nop                                           ; $4881: $00
     ld b, b                                       ; $4882: $40
     ld b, b                                       ; $4883: $40
-    ld [HeaderROMSize], sp                        ; $4884: $08 $48 $01
+    ld [$0148], sp                                ; $4884: $08 $48 $01
     sub b                                         ; $4887: $90
     sub b                                         ; $4888: $90
     ld c, c                                       ; $4889: $49
@@ -2147,7 +2147,7 @@ jr_0a6_495d:
     ld a, a                                       ; $4980: $7f
     nop                                           ; $4981: $00
     ld bc, $0902                                  ; $4982: $01 $02 $09
-    ld bc, HeaderLogo                             ; $4985: $01 $04 $01
+    ld bc, $0104                                  ; $4985: $01 $04 $01
     ld c, e                                       ; $4988: $4b
     ld h, $00                                     ; $4989: $26 $00
     xor c                                         ; $498b: $a9
@@ -3997,7 +3997,7 @@ Call_0a6_51f0:
     ld c, $00                                     ; $51f1: $0e $00
     ld d, $01                                     ; $51f3: $16 $01
     and d                                         ; $51f5: $a2
-    ld bc, HeaderSGBFlag                          ; $51f6: $01 $46 $01
+    ld bc, $0146                                  ; $51f6: $01 $46 $01
     ld b, h                                       ; $51f9: $44
     xor d                                         ; $51fa: $aa
     xor h                                         ; $51fb: $ac
@@ -8717,7 +8717,7 @@ jr_0a6_666c:
     rst $38                                       ; $667b: $ff
     call nc, Call_0a6_6b01                        ; $667c: $d4 $01 $6b
     sub l                                         ; $667f: $95
-    ld bc, HeaderNewLicenseeCode                  ; $6680: $01 $44 $01
+    ld bc, $0144                                  ; $6680: $01 $44 $01
     xor e                                         ; $6683: $ab
     ld d, c                                       ; $6684: $51
     jr z, @+$01                                   ; $6685: $28 $ff
@@ -9510,7 +9510,7 @@ jr_0a6_6a1e:
 
 jr_0a6_6a1f:
     inc de                                        ; $6a1f: $13
-    ld bc, HeaderSGBFlag                          ; $6a20: $01 $46 $01
+    ld bc, $0146                                  ; $6a20: $01 $46 $01
     inc b                                         ; $6a23: $04
     inc de                                        ; $6a24: $13
     ld bc, $0320                                  ; $6a25: $01 $20 $03
@@ -14374,7 +14374,7 @@ jr_0a6_7f2d:
 
     ld e, b                                       ; $7f31: $58
     ld hl, $0c21                                  ; $7f32: $21 $21 $0c
-    ld sp, HeaderCGBFlag                          ; $7f35: $31 $43 $01
+    ld sp, $0143                                  ; $7f35: $31 $43 $01
     rst $38                                       ; $7f38: $ff
     sbc $18                                       ; $7f39: $de $18
     ld d, l                                       ; $7f3b: $55

@@ -5882,7 +5882,7 @@ jr_0b6_57b0:
 jr_0b6_57c4:
     nop                                           ; $57c4: $00
     inc c                                         ; $57c5: $0c
-    ld bc, HeaderGlobalChecksum                   ; $57c6: $01 $4e $01
+    ld bc, $014e                   ; $57c6: $01 $4e $01
     nop                                           ; $57c9: $00
     inc b                                         ; $57ca: $04
     rst $38                                       ; $57cb: $ff

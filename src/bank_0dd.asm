@@ -2635,7 +2635,7 @@ jr_0dd_4b52:
     ld [hl+], a                                   ; $4b5e: $22
     ld a, $03                                     ; $4b5f: $3e $03
     ccf                                           ; $4b61: $3f
-    ld bc, HeaderManufacturerCode                 ; $4b62: $01 $3f $01
+    ld bc, $013f                                  ; $4b62: $01 $3f $01
     ccf                                           ; $4b65: $3f
     ld c, $3e                                     ; $4b66: $0e $3e
     ld [bc], a                                    ; $4b68: $02
@@ -2868,7 +2868,7 @@ jr_0dd_4c71:
     ld a, $02                                     ; $4c72: $3e $02
     ld a, $01                                     ; $4c74: $3e $01
     ccf                                           ; $4c76: $3f
-    ld bc, HeaderManufacturerCode                 ; $4c77: $01 $3f $01
+    ld bc, $013f                                  ; $4c77: $01 $3f $01
     ccf                                           ; $4c7a: $3f
     ld bc, $0e3f                                  ; $4c7b: $01 $3f $0e
     ld a, $02                                     ; $4c7e: $3e $02
@@ -2986,7 +2986,7 @@ jr_0dd_4cfd:
     ld a, $02                                     ; $4d02: $3e $02
     ld a, $01                                     ; $4d04: $3e $01
     ccf                                           ; $4d06: $3f
-    ld bc, HeaderManufacturerCode                 ; $4d07: $01 $3f $01
+    ld bc, $013f                                  ; $4d07: $01 $3f $01
     ccf                                           ; $4d0a: $3f
     rlca                                          ; $4d0b: $07
     ccf                                           ; $4d0c: $3f

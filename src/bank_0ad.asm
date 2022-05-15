@@ -6709,7 +6709,7 @@ jr_0ad_5f70:
     ld [hl], $f2                                  ; $5f75: $36 $f2
     ld [hl-], a                                   ; $5f77: $32
     call c, $46c0                                 ; $5f78: $dc $c0 $46
-    ld bc, HeaderRAMSize                          ; $5f7b: $01 $49 $01
+    ld bc, $0149                                  ; $5f7b: $01 $49 $01
     rst $38                                       ; $5f7e: $ff
     nop                                           ; $5f7f: $00
 

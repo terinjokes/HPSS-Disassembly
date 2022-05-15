@@ -692,7 +692,7 @@ jr_04d_42c5:
     ld bc, $00f4                                  ; $42dd: $01 $f4 $00
     ld bc, $0125                                  ; $42e0: $01 $25 $01
     ld bc, $012a                                  ; $42e3: $01 $2a $01
-    ld bc, HeaderManufacturerCode                 ; $42e6: $01 $3f $01
+    ld bc, $013f                                  ; $42e6: $01 $3f $01
     ld bc, $0151                                  ; $42e9: $01 $51 $01
     ld bc, $017b                                  ; $42ec: $01 $7b $01
 

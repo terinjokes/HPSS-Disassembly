@@ -2942,7 +2942,7 @@ jr_0d7_50dc:
     ld de, $1133                                  ; $50e7: $11 $33 $11
     ld de, $2811                                  ; $50ea: $11 $11 $28
     ld [$4080], sp                                ; $50ed: $08 $80 $40
-    ld [HeaderCartridgeType], sp                  ; $50f0: $08 $47 $01
+    ld [$0147], sp                                ; $50f0: $08 $47 $01
 
 jr_0d7_50f3:
     xor e                                         ; $50f3: $ab
@@ -7503,7 +7503,7 @@ jr_0d7_65c8:
     ld a, [hl-]                                   ; $660b: $3a
 
 jr_0d7_660c:
-    ld bc, HeaderNewLicenseeCode                  ; $660c: $01 $44 $01
+    ld bc, $0144                  ; $660c: $01 $44 $01
     ld c, [hl]                                    ; $660f: $4e
     ld bc, $0158                                  ; $6610: $01 $58 $01
     ld h, d                                       ; $6613: $62

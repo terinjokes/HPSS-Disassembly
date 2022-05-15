@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Script reads the generated inputs list for RGBDS object files,
 # marks them as dependencies for gup, and then links into the ROM.
+# The ROM is fixed with rgbfix to set fields in the header and
+# generate checksums.
 #
 # This script is part of HPSS-Disassembly.
 #
@@ -25,4 +27,14 @@ done
 gup -u "${objs[@]}"
 
 rgblink -o "$1" "${objs[@]}"
-rgbfix -v -p 255 "$1"
+rgbfix --color-only \
+       --ram-size 0x02 \
+       --old-license 0x33 \
+       --new-license "69" \
+       --mbc-type 0x1B \
+       --rom-version 0x00 \
+       --non-japanese \
+       --title "HARRYPOTTER" \
+       --game-id "BHVE" \
+       --validate \
+       --pad-value 0xFF "$1"

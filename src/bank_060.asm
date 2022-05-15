@@ -13726,7 +13726,7 @@ Call_060_7bce:
     add a                                         ; $7be2: $87
     ld a, [$3cd0]                                 ; $7be3: $fa $d0 $3c
     ld d, b                                       ; $7be6: $50
-    jp z, Jump_000_012b                           ; $7be7: $ca $2b $01
+    jp z, $012b                                   ; $7be7: $ca $2b $01
 
     sbc c                                         ; $7bea: $99
     or [hl]                                       ; $7beb: $b6

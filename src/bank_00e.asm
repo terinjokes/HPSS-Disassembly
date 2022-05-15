@@ -4068,7 +4068,7 @@ Call_00e_5215:
     nop                                           ; $52e1: $00
     rrca                                          ; $52e2: $0f
     inc c                                         ; $52e3: $0c
-    ld bc, HeaderComplementCheck                  ; $52e4: $01 $4d $01
+    ld bc, $014d                                  ; $52e4: $01 $4d $01
     nop                                           ; $52e7: $00
     jr z, jr_00e_5331                             ; $52e8: $28 $47
 
@@ -4748,7 +4748,7 @@ jr_00e_5601:
     nop                                           ; $5608: $00
     rrca                                          ; $5609: $0f
     inc c                                         ; $560a: $0c
-    ld bc, HeaderComplementCheck                  ; $560b: $01 $4d $01
+    ld bc, $014d                                  ; $560b: $01 $4d $01
     nop                                           ; $560e: $00
     jr z, jr_00e_5658                             ; $560f: $28 $47
 

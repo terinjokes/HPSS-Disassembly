@@ -2660,7 +2660,7 @@ jr_0a4_4bad:
     call Call_000_0a02                            ; $4bbc: $cd $02 $0a
     dec b                                         ; $4bbf: $05
     ld [hl], d                                    ; $4bc0: $72
-    ld bc, HeaderManufacturerCode                 ; $4bc1: $01 $3f $01
+    ld bc, $013f                                  ; $4bc1: $01 $3f $01
     nop                                           ; $4bc4: $00
     dec b                                         ; $4bc5: $05
     inc bc                                        ; $4bc6: $03
@@ -8582,7 +8582,7 @@ jr_0a4_65f2:
     nop                                           ; $65fa: $00
     dec b                                         ; $65fb: $05
     ld [hl], d                                    ; $65fc: $72
-    ld bc, HeaderManufacturerCode                 ; $65fd: $01 $3f $01
+    ld bc, $013f                                  ; $65fd: $01 $3f $01
     dec b                                         ; $6600: $05
     inc bc                                        ; $6601: $03
     cp d                                          ; $6602: $ba
@@ -11952,7 +11952,7 @@ jr_0a4_747b:
     rla                                           ; $748d: $17
     add b                                         ; $748e: $80
     ld [bc], a                                    ; $748f: $02
-    ld bc, HeaderLogo                             ; $7490: $01 $04 $01
+    ld bc, $0104                                  ; $7490: $01 $04 $01
     nop                                           ; $7493: $00
     add b                                         ; $7494: $80
     ld [bc], a                                    ; $7495: $02
@@ -12499,7 +12499,7 @@ jr_0a4_76c6:
     cp $27                                        ; $76ec: $fe $27
     sbc $a0                                       ; $76ee: $de $a0
     ld [bc], a                                    ; $76f0: $02
-    ld bc, HeaderSGBFlag                          ; $76f1: $01 $46 $01
+    ld bc, $0146                                  ; $76f1: $01 $46 $01
     jr z, jr_0a4_76c6                             ; $76f4: $28 $d0
 
     stop                                          ; $76f6: $10 $00
@@ -12557,7 +12557,7 @@ Call_0a4_7710:
     db $dd                                        ; $772b: $dd
     cp $01                                        ; $772c: $fe $01
     db $10                                        ; $772e: $10
-    call nc, Call_000_012b                        ; $772f: $d4 $2b $01
+    db $d4, $2b, $01                              ; $772f: $d4 $2b $01
     nop                                           ; $7732: $00
     nop                                           ; $7733: $00
     inc b                                         ; $7734: $04

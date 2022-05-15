@@ -4451,7 +4451,7 @@ jr_0a5_5224:
     dec de                                        ; $52b6: $1b
     ldh [rNR11], a                                ; $52b7: $e0 $11
     ld [bc], a                                    ; $52b9: $02
-    ld [HeaderManufacturerCode], sp               ; $52ba: $08 $3f $01
+    ld [$013f], sp                                ; $52ba: $08 $3f $01
     nop                                           ; $52bd: $00
     ld a, [hl+]                                   ; $52be: $2a
     xor b                                         ; $52bf: $a8
@@ -14366,7 +14366,7 @@ jr_0a5_7db6:
     nop                                           ; $7de5: $00
     ld bc, $0154                                  ; $7de6: $01 $54 $01
     ld a, [bc]                                    ; $7de9: $0a
-    ld bc, HeaderLogo                             ; $7dea: $01 $04 $01
+    ld bc, $0104                                  ; $7dea: $01 $04 $01
     xor d                                         ; $7ded: $aa
     add l                                         ; $7dee: $85
     ld [$aa00], sp                                ; $7def: $08 $00 $aa

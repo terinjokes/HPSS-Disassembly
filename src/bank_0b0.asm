@@ -8659,7 +8659,7 @@ jr_0b0_61d9:
     nop                                           ; $61ea: $00
     rst $38                                       ; $61eb: $ff
     ld a, a                                       ; $61ec: $7f
-    ld [HeaderNewLicenseeCode], a                 ; $61ed: $ea $44 $01
+    ld [$0144], a                 ; $61ed: $ea $44 $01
     jr nz, jr_0b0_61f7                            ; $61f0: $20 $05
 
     inc h                                         ; $61f2: $24
@@ -14520,7 +14520,7 @@ jr_0b0_79c2:
     sub l                                         ; $7a1b: $95
     ld de, $1a7a                                  ; $7a1c: $11 $7a $1a
     and a                                         ; $7a1f: $a7
-    ld [HeaderOldLicenseeCode], sp                ; $7a20: $08 $4b $01
+    ld [$014b], sp                ; $7a20: $08 $4b $01
     sbc d                                         ; $7a23: $9a
     ld d, $17                                     ; $7a24: $16 $17
     ld [bc], a                                    ; $7a26: $02
@@ -14673,7 +14673,7 @@ jr_0b0_7a61:
     ld a, l                                       ; $7ae5: $7d
     inc bc                                        ; $7ae6: $03
     db $d3                                        ; $7ae7: $d3
-    ld bc, HeaderTitle                            ; $7ae8: $01 $34 $01
+    ld bc, $0134                            ; $7ae8: $01 $34 $01
     cp [hl]                                       ; $7aeb: $be
     ld [bc], a                                    ; $7aec: $02
     ld a, a                                       ; $7aed: $7f
@@ -15435,7 +15435,7 @@ jr_0b0_7e23:
     ldh a, [$0e]                                  ; $7e44: $f0 $0e
     pop af                                        ; $7e46: $f1
     ld a, [hl+]                                   ; $7e47: $2a
-    ld bc, HeaderLogo                             ; $7e48: $01 $04 $01
+    ld bc, $0104                             ; $7e48: $01 $04 $01
     nop                                           ; $7e4b: $00
     add hl, de                                    ; $7e4c: $19
     rst $38                                       ; $7e4d: $ff

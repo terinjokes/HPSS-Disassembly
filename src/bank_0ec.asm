@@ -3275,7 +3275,7 @@ jr_0ec_531f:
     inc a                                         ; $5363: $3c
     inc [hl]                                      ; $5364: $34
     ld [bc], a                                    ; $5365: $02
-    ld [HeaderLogo], sp                           ; $5366: $08 $04 $01
+    ld [$0104], sp                           ; $5366: $08 $04 $01
     ld [bc], a                                    ; $5369: $02
     ld [bc], a                                    ; $536a: $02
     add h                                         ; $536b: $84
@@ -7294,7 +7294,7 @@ jr_0ec_6382:
     dec a                                         ; $6570: $3d
     dec bc                                        ; $6571: $0b
     ccf                                           ; $6572: $3f
-    ld bc, HeaderManufacturerCode                 ; $6573: $01 $3f $01
+    ld bc, $013f                 ; $6573: $01 $3f $01
     inc b                                         ; $6576: $04
     ccf                                           ; $6577: $3f
     rst $38                                       ; $6578: $ff

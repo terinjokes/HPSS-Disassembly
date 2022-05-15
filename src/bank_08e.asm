@@ -8963,7 +8963,7 @@ jr_08e_6c4c:
 
 jr_08e_6c66:
     inc c                                         ; $6c66: $0c
-    ld de, HeaderSGBFlag                          ; $6c67: $11 $46 $01
+    ld de, $0146                                  ; $6c67: $11 $46 $01
     ld b, a                                       ; $6c6a: $47
     ld bc, $0048                                  ; $6c6b: $01 $48 $00
     ld bc, $0152                                  ; $6c6e: $01 $52 $01
@@ -8996,9 +8996,9 @@ jr_08e_6c66:
     xor d                                         ; $6ca3: $aa
     add b                                         ; $6ca4: $80
     ld c, b                                       ; $6ca5: $48
-    ld de, HeaderRAMSize                          ; $6ca6: $11 $49 $01
+    ld de, $0149                                  ; $6ca6: $11 $49 $01
     ld c, d                                       ; $6ca9: $4a
-    ld bc, HeaderOldLicenseeCode                  ; $6caa: $01 $4b $01
+    ld bc, $014b                                  ; $6caa: $01 $4b $01
     ld d, [hl]                                    ; $6cad: $56
     nop                                           ; $6cae: $00
     ld bc, $0157                                  ; $6caf: $01 $57 $01
@@ -9029,7 +9029,7 @@ jr_08e_6c66:
     and h                                         ; $6ce0: $a4
     ld bc, $84ab                                  ; $6ce1: $01 $ab $84
     ld de, $004c                                  ; $6ce4: $11 $4c $00
-    ld bc, HeaderComplementCheck                  ; $6ce7: $01 $4d $01
+    ld bc, $014d                                  ; $6ce7: $01 $4d $01
     ld c, [hl]                                    ; $6cea: $4e
     ld bc, $015a                                  ; $6ceb: $01 $5a $01
     ld e, e                                       ; $6cee: $5b
@@ -10164,7 +10164,7 @@ Call_08e_70d1:
 
 jr_08e_71e3:
     ld bc, $0308                                  ; $71e3: $01 $08 $03
-    ld bc, HeaderLogo                             ; $71e6: $01 $04 $01
+    ld bc, $0104                                  ; $71e6: $01 $04 $01
     ld [de], a                                    ; $71e9: $12
     dec bc                                        ; $71ea: $0b
     ld a, [bc]                                    ; $71eb: $0a
@@ -10253,7 +10253,7 @@ jr_08e_725d:
     ld bc, $022a                                  ; $725e: $01 $2a $02
     nop                                           ; $7261: $00
     inc sp                                        ; $7262: $33
-    ld bc, HeaderTitle                            ; $7263: $01 $34 $01
+    ld bc, $0134                                  ; $7263: $01 $34 $01
     ld b, h                                       ; $7266: $44
     dec [hl]                                      ; $7267: $35
     ld h, b                                       ; $7268: $60
@@ -10882,8 +10882,8 @@ jr_08e_74ea:
     ld a, [hl-]                                   ; $7531: $3a
     ld bc, $013b                                  ; $7532: $01 $3b $01
     inc a                                         ; $7535: $3c
-    ld bc, HeaderRAMSize                          ; $7536: $01 $49 $01
-    ld [HeaderDestinationCode], sp                ; $7539: $08 $4a $01
+    ld bc, $0149                                  ; $7536: $01 $49 $01
+    ld [$014a], sp                                ; $7539: $08 $4a $01
     ld c, e                                       ; $753c: $4b
     ld bc, $092c                                  ; $753d: $01 $2c $09
     ld d, h                                       ; $7540: $54
@@ -10908,12 +10908,12 @@ jr_08e_74ea:
 
 jr_08e_7565:
     ld bc, $003e                                  ; $7565: $01 $3e $00
-    ld bc, HeaderManufacturerCode                 ; $7568: $01 $3f $01
+    ld bc, $013f                                  ; $7568: $01 $3f $01
     ld b, b                                       ; $756b: $40
-    ld bc, HeaderMaskROMVersion                   ; $756c: $01 $4c $01
+    ld bc, $014c                                  ; $756c: $01 $4c $01
     ld c, l                                       ; $756f: $4d
     db $10                                        ; $7570: $10
-    ld bc, HeaderGlobalChecksum                   ; $7571: $01 $4e $01
+    ld bc, $014e                                  ; $7571: $01 $4e $01
     inc l                                         ; $7574: $2c
     add hl, bc                                    ; $7575: $09
     ld d, a                                       ; $7576: $57
@@ -10933,12 +10933,12 @@ jr_08e_7565:
     ld bc, $0125                                  ; $758e: $01 $25 $01
     ld sp, $3201                                  ; $7591: $31 $01 $32
     ld bc, $3300                                  ; $7594: $01 $00 $33
-    ld bc, HeaderTitle                            ; $7597: $01 $34 $01
+    ld bc, $0134                                  ; $7597: $01 $34 $01
     ld b, c                                       ; $759a: $41
     ld bc, $0142                                  ; $759b: $01 $42 $01
     nop                                           ; $759e: $00
     ld b, e                                       ; $759f: $43
-    ld bc, HeaderNewLicenseeCode                  ; $75a0: $01 $44 $01
+    ld bc, $0144                                  ; $75a0: $01 $44 $01
     ld c, a                                       ; $75a3: $4f
     ld bc, $0150                                  ; $75a4: $01 $50 $01
     ld b, b                                       ; $75a7: $40
@@ -10964,8 +10964,8 @@ jr_08e_7565:
     ld bc, $3800                                  ; $75cb: $01 $00 $38
     ld bc, $0145                                  ; $75ce: $01 $45 $01
     ld b, [hl]                                    ; $75d1: $46
-    ld bc, HeaderCartridgeType                    ; $75d2: $01 $47 $01
-    ld bc, HeaderROMSize                          ; $75d5: $01 $48 $01
+    ld bc, $0147                                  ; $75d2: $01 $47 $01
+    ld bc, $0148                                  ; $75d5: $01 $48 $01
     ld d, c                                       ; $75d8: $51
     ld bc, $0152                                  ; $75d9: $01 $52 $01
     ld d, e                                       ; $75dc: $53

@@ -304,7 +304,7 @@ Jump_098_4107:
 
     ld [$3e87], sp                                ; $415a: $08 $87 $3e
     pop bc                                        ; $415d: $c1
-    ld bc, HeaderLogo                             ; $415e: $01 $04 $01
+    ld bc, $0104                                  ; $415e: $01 $04 $01
     inc bc                                        ; $4161: $03
     rst $38                                       ; $4162: $ff
     dec sp                                        ; $4163: $3b
@@ -10732,7 +10732,7 @@ jr_098_6f0e:
     add b                                         ; $6f13: $80
     dec l                                         ; $6f14: $2d
     ld a, [bc]                                    ; $6f15: $0a
-    call z, Call_000_0120                         ; $6f16: $cc $20 $01
+    db $cc, $20, $01                              ; $6f16: $cc $20 $01
     ld a, [bc]                                    ; $6f19: $0a
     nop                                           ; $6f1a: $00
     rst $30                                       ; $6f1b: $f7

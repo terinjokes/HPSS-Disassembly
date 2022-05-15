@@ -1313,7 +1313,7 @@ jr_0af_45b3:
     ld d, $44                                     ; $45b4: $16 $44
     ld d, h                                       ; $45b6: $54
     ld b, l                                       ; $45b7: $45
-    ld de, HeaderComplementCheck                  ; $45b8: $11 $4d $01
+    ld de, $014d                                  ; $45b8: $11 $4d $01
     ld b, $08                                     ; $45bb: $06 $08
     inc bc                                        ; $45bd: $03
     ld hl, sp+$03                                 ; $45be: $f8 $03
@@ -12742,7 +12742,7 @@ jr_0af_7566:
     rst $08                                       ; $758d: $cf
     nop                                           ; $758e: $00
     inc [hl]                                      ; $758f: $34
-    ld bc, HeaderTitle                            ; $7590: $01 $34 $01
+    ld bc, $0134                                  ; $7590: $01 $34 $01
     ld a, $12                                     ; $7593: $3e $12
     nop                                           ; $7595: $00
     inc e                                         ; $7596: $1c
@@ -12886,7 +12886,7 @@ jr_0af_760e:
     rst $08                                       ; $7637: $cf
     nop                                           ; $7638: $00
     inc de                                        ; $7639: $13
-    ld bc, HeaderTitle                            ; $763a: $01 $34 $01
+    ld bc, $0134                                  ; $763a: $01 $34 $01
     ld [bc], a                                    ; $763d: $02
     nop                                           ; $763e: $00
     rst $38                                       ; $763f: $ff

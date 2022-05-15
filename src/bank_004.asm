@@ -3458,7 +3458,7 @@ Call_004_5700:
     add hl, de                                    ; $57a4: $19
     ld d, h                                       ; $57a5: $54
     ld e, l                                       ; $57a6: $5d
-    ld bc, HeaderMaskROMVersion                   ; $57a7: $01 $4c $01
+    ld bc, $014c                   ; $57a7: $01 $4c $01
     call Call_004_56bc                            ; $57aa: $cd $bc $56
     pop hl                                        ; $57ad: $e1
     ld [hl+], a                                   ; $57ae: $22
@@ -3555,7 +3555,7 @@ Call_004_5700:
     add hl, de                                    ; $5872: $19
     ld d, h                                       ; $5873: $54
     ld e, l                                       ; $5874: $5d
-    ld bc, HeaderMaskROMVersion                   ; $5875: $01 $4c $01
+    ld bc, $014c                   ; $5875: $01 $4c $01
     call Call_004_56bc                            ; $5878: $cd $bc $56
     pop hl                                        ; $587b: $e1
     ld [hl+], a                                   ; $587c: $22
@@ -5334,7 +5334,7 @@ jr_004_644d:
     nop                                           ; $6531: $00
     inc c                                         ; $6532: $0c
     nop                                           ; $6533: $00
-    ld bc, HeaderOldLicenseeCode                  ; $6534: $01 $4b $01
+    ld bc, $014b                  ; $6534: $01 $4b $01
     ret z                                         ; $6537: $c8
 
     dec bc                                        ; $6538: $0b

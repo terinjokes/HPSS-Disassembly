@@ -5384,7 +5384,7 @@ jr_0a3_5798:
     add sp, -$54                                  ; $57ec: $e8 $ac
     inc c                                         ; $57ee: $0c
     ld a, [hl+]                                   ; $57ef: $2a
-    ld bc, HeaderLogo                             ; $57f0: $01 $04 $01
+    ld bc, $0104                                  ; $57f0: $01 $04 $01
     nop                                           ; $57f3: $00
     inc bc                                        ; $57f4: $03
     nop                                           ; $57f5: $00
@@ -10189,7 +10189,7 @@ jr_0a3_6d22:
     nop                                           ; $6d41: $00
     dec b                                         ; $6d42: $05
     ld [hl], d                                    ; $6d43: $72
-    ld bc, HeaderManufacturerCode                 ; $6d44: $01 $3f $01
+    ld bc, $013f                                  ; $6d44: $01 $3f $01
     dec b                                         ; $6d47: $05
     inc bc                                        ; $6d48: $03
     cp d                                          ; $6d49: $ba
@@ -13854,7 +13854,7 @@ jr_0a3_7c92:
     ld [hl+], a                                   ; $7d49: $22
     ld bc, $002d                                  ; $7d4a: $01 $2d $00
     inc c                                         ; $7d4d: $0c
-    ld bc, HeaderMaskROMVersion                   ; $7d4e: $01 $4c $01
+    ld bc, $014c                                  ; $7d4e: $01 $4c $01
     dec c                                         ; $7d51: $0d
     ld bc, $040b                                  ; $7d52: $01 $0b $04
     ld d, e                                       ; $7d55: $53
@@ -14048,7 +14048,7 @@ jr_0a3_7de2:
     inc c                                         ; $7e4b: $0c
     ld bc, $003d                                  ; $7e4c: $01 $3d $00
     inc c                                         ; $7e4f: $0c
-    ld bc, HeaderDestinationCode                  ; $7e50: $01 $4a $01
+    ld bc, $014a                                  ; $7e50: $01 $4a $01
     adc h                                         ; $7e53: $8c
     nop                                           ; $7e54: $00
     inc c                                         ; $7e55: $0c
@@ -14149,7 +14149,7 @@ jr_0a3_7de2:
     dec [hl]                                      ; $7ed1: $35
     nop                                           ; $7ed2: $00
     rlca                                          ; $7ed3: $07
-    ld bc, HeaderMaskROMVersion                   ; $7ed4: $01 $4c $01
+    ld bc, $014c                                  ; $7ed4: $01 $4c $01
     dec hl                                        ; $7ed7: $2b
     nop                                           ; $7ed8: $00
     inc c                                         ; $7ed9: $0c

@@ -964,7 +964,7 @@ jr_0e7_4424:
 jr_0e7_4432:
     ld a, $02                                     ; $4432: $3e $02
     ccf                                           ; $4434: $3f
-    ld bc, HeaderManufacturerCode                 ; $4435: $01 $3f $01
+    ld bc, $013f                 ; $4435: $01 $3f $01
     ccf                                           ; $4438: $3f
     ld bc, $023c                                  ; $4439: $01 $3c $02
     jr c, @+$06                                   ; $443c: $38 $04
@@ -1045,7 +1045,7 @@ jr_0e7_448c:
     inc c                                         ; $4495: $0c
     ld a, $02                                     ; $4496: $3e $02
     ccf                                           ; $4498: $3f
-    ld bc, HeaderManufacturerCode                 ; $4499: $01 $3f $01
+    ld bc, $013f                 ; $4499: $01 $3f $01
     ccf                                           ; $449c: $3f
     ld bc, $023c                                  ; $449d: $01 $3c $02
     jr c, @+$06                                   ; $44a0: $38 $04
@@ -1142,7 +1142,7 @@ jr_0e7_44ea:
     inc c                                         ; $44fd: $0c
     ld a, $02                                     ; $44fe: $3e $02
     ccf                                           ; $4500: $3f
-    ld bc, HeaderManufacturerCode                 ; $4501: $01 $3f $01
+    ld bc, $013f                 ; $4501: $01 $3f $01
     ccf                                           ; $4504: $3f
     ld bc, $023c                                  ; $4505: $01 $3c $02
     jr c, @+$06                                   ; $4508: $38 $04
@@ -1221,7 +1221,7 @@ jr_0e7_4557:
     inc c                                         ; $455b: $0c
     ld a, $02                                     ; $455c: $3e $02
     ccf                                           ; $455e: $3f
-    ld bc, HeaderManufacturerCode                 ; $455f: $01 $3f $01
+    ld bc, $013f                 ; $455f: $01 $3f $01
     ccf                                           ; $4562: $3f
     ld bc, $023c                                  ; $4563: $01 $3c $02
     jr c, @+$06                                   ; $4566: $38 $04

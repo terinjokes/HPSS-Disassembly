@@ -505,7 +505,7 @@ jr_0d5_420a:
     ld [bc], a                                    ; $4241: $02
     nop                                           ; $4242: $00
     sbc b                                         ; $4243: $98
-    ld bc, HeaderNewLicenseeCode                  ; $4244: $01 $44 $01
+    ld bc, $0144                  ; $4244: $01 $44 $01
     ld e, [hl]                                    ; $4247: $5e
     dec bc                                        ; $4248: $0b
     add h                                         ; $4249: $84
@@ -7552,12 +7552,12 @@ jr_0d5_62f4:
     add e                                         ; $62f4: $83
     inc h                                         ; $62f5: $24
     nop                                           ; $62f6: $00
-    ld bc, HeaderSGBFlag                          ; $62f7: $01 $46 $01
+    ld bc, $0146                          ; $62f7: $01 $46 $01
     xor h                                         ; $62fa: $ac
     ld bc, $01ca                                  ; $62fb: $01 $ca $01
     add d                                         ; $62fe: $82
     nop                                           ; $62ff: $00
-    ld bc, HeaderDestinationCode                  ; $6300: $01 $4a $01
+    ld bc, $014a                  ; $6300: $01 $4a $01
     nop                                           ; $6303: $00
     inc b                                         ; $6304: $04
     sub d                                         ; $6305: $92
@@ -8978,7 +8978,7 @@ jr_0d5_6907:
 jr_0d5_6933:
     ld b, [hl]                                    ; $6933: $46
     nop                                           ; $6934: $00
-    ld bc, HeaderSGBFlag                          ; $6935: $01 $46 $01
+    ld bc, $0146                          ; $6935: $01 $46 $01
     ld [bc], a                                    ; $6938: $02
     cp b                                          ; $6939: $b8
     ld [bc], a                                    ; $693a: $02
@@ -10013,7 +10013,7 @@ jr_0d5_6f76:
     nop                                           ; $6fa3: $00
     ld b, [hl]                                    ; $6fa4: $46
     nop                                           ; $6fa5: $00
-    ld bc, HeaderMaskROMVersion                   ; $6fa6: $01 $4c $01
+    ld bc, $014c                   ; $6fa6: $01 $4c $01
     call nz, $db00                                ; $6fa9: $c4 $00 $db
     ld c, $60                                     ; $6fac: $0e $60
     nop                                           ; $6fae: $00

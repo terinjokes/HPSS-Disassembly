@@ -14355,7 +14355,7 @@ Jump_09f_7fc3:
     rlca                                          ; $7fc8: $07
     inc bc                                        ; $7fc9: $03
     add hl, bc                                    ; $7fca: $09
-    ld bc, HeaderCartridgeType                    ; $7fcb: $01 $47 $01
+    ld bc, $0147                                  ; $7fcb: $01 $47 $01
     ld a, [bc]                                    ; $7fce: $0a
     ld c, $0a                                     ; $7fcf: $0e $0a
     ld bc, $0200                                  ; $7fd1: $01 $00 $02

@@ -2963,7 +2963,7 @@ jr_0f7_4cca:
     ld sp, hl                                     ; $4cdb: $f9
     nop                                           ; $4cdc: $00
     ld sp, hl                                     ; $4cdd: $f9
-    ld bc, HeaderLogo                             ; $4cde: $01 $04 $01
+    ld bc, $0104                                  ; $4cde: $01 $04 $01
     sbc h                                         ; $4ce1: $9c
     nop                                           ; $4ce2: $00
     ld bc, $0302                                  ; $4ce3: $01 $02 $03
@@ -3126,7 +3126,7 @@ jr_0f7_4d3b:
     inc b                                         ; $4d93: $04
     ld b, $00                                     ; $4d94: $06 $00
     ld [bc], a                                    ; $4d96: $02
-    ld bc, HeaderCGBFlag                          ; $4d97: $01 $43 $01
+    ld bc, $0143                                  ; $4d97: $01 $43 $01
     inc bc                                        ; $4d9a: $03
     inc b                                         ; $4d9b: $04
     ld b, [hl]                                    ; $4d9c: $46
@@ -3204,7 +3204,7 @@ jr_0f7_4dcf:
     ld hl, sp-$09                                 ; $4dea: $f8 $f7
     nop                                           ; $4dec: $00
     rst $30                                       ; $4ded: $f7
-    ld bc, HeaderLogo                             ; $4dee: $01 $04 $01
+    ld bc, $0104                                  ; $4dee: $01 $04 $01
     sbc e                                         ; $4df1: $9b
     nop                                           ; $4df2: $00
     ld bc, $0100                                  ; $4df3: $01 $00 $01
@@ -3354,7 +3354,7 @@ jr_0f7_4e65:
     inc b                                         ; $4e96: $04
     ld b, $00                                     ; $4e97: $06 $00
     ld [bc], a                                    ; $4e99: $02
-    ld bc, HeaderCGBFlag                          ; $4e9a: $01 $43 $01
+    ld bc, $0143                                  ; $4e9a: $01 $43 $01
     ld b, e                                       ; $4e9d: $43
     nop                                           ; $4e9e: $00
     ld [bc], a                                    ; $4e9f: $02
@@ -3454,7 +3454,7 @@ jr_0f7_4f04:
     ld [bc], a                                    ; $4f0b: $02
     inc b                                         ; $4f0c: $04
     ld b, [hl]                                    ; $4f0d: $46
-    ld bc, HeaderCGBFlag                          ; $4f0e: $01 $43 $01
+    ld bc, $0143                                  ; $4f0e: $01 $43 $01
     inc bc                                        ; $4f11: $03
     nop                                           ; $4f12: $00
     ld [bc], a                                    ; $4f13: $02

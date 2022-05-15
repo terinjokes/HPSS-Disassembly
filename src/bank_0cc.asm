@@ -14052,7 +14052,7 @@ jr_0cc_7eaa:
     dec e                                         ; $7eb9: $1d
     ld bc, $1f00                                  ; $7eba: $01 $00 $1f
     rst $38                                       ; $7ebd: $ff
-    ld [HeaderLogo], sp                           ; $7ebe: $08 $04 $01
+    ld [$0104], sp                                ; $7ebe: $08 $04 $01
 
 jr_0cc_7ec1:
     nop                                           ; $7ec1: $00
@@ -14237,7 +14237,7 @@ jr_0cc_7f65:
     ld bc, $00ff                                  ; $7f7b: $01 $ff $00
     xor [hl]                                      ; $7f7e: $ae
     inc e                                         ; $7f7f: $1c
-    ld bc, HeaderSGBFlag                          ; $7f80: $01 $46 $01
+    ld bc, $0146                                  ; $7f80: $01 $46 $01
     ld b, b                                       ; $7f83: $40
     ld [$080c], sp                                ; $7f84: $08 $0c $08
     ret nc                                        ; $7f87: $d0

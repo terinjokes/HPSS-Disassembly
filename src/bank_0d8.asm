@@ -47,7 +47,7 @@ Call_0d8_4001:
     ld a, [hl-]                                   ; $402d: $3a
 
 jr_0d8_402e:
-    ld bc, HeaderNewLicenseeCode                  ; $402e: $01 $44 $01
+    ld bc, $0144                  ; $402e: $01 $44 $01
 
 Jump_0d8_4031:
     ld bc, $fa00                                  ; $4031: $01 $00 $fa
@@ -6979,7 +6979,7 @@ jr_0d8_65b4:
     rlca                                          ; $65f0: $07
     ld bc, $0001                                  ; $65f1: $01 $01 $00
     and b                                         ; $65f4: $a0
-    ld bc, HeaderROMSize                          ; $65f5: $01 $48 $01
+    ld bc, $0148                          ; $65f5: $01 $48 $01
     ld [bc], a                                    ; $65f8: $02
     nop                                           ; $65f9: $00
     ldh [rP1], a                                  ; $65fa: $e0 $00
@@ -7801,7 +7801,7 @@ jr_0d8_6a2b:
     ld [$0f00], sp                                ; $6a4e: $08 $00 $0f
     nop                                           ; $6a51: $00
     rst $38                                       ; $6a52: $ff
-    ld bc, HeaderLogo                             ; $6a53: $01 $04 $01
+    ld bc, $0104                             ; $6a53: $01 $04 $01
     ld [$0f00], sp                                ; $6a56: $08 $00 $0f
     nop                                           ; $6a59: $00
     rst $38                                       ; $6a5a: $ff

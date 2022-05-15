@@ -10101,7 +10101,7 @@ jr_0f4_6cc1:
     inc b                                         ; $6dd7: $04
     nop                                           ; $6dd8: $00
     ld b, h                                       ; $6dd9: $44
-    ld [HeaderMaskROMVersion], sp                 ; $6dda: $08 $4c $01
+    ld [$014c], sp                                ; $6dda: $08 $4c $01
     ld e, c                                       ; $6ddd: $59
     inc b                                         ; $6dde: $04
     ld l, d                                       ; $6ddf: $6a
@@ -10189,7 +10189,7 @@ jr_0f4_6e1e:
     inc b                                         ; $6e3d: $04
     nop                                           ; $6e3e: $00
     ld b, h                                       ; $6e3f: $44
-    ld [HeaderMaskROMVersion], sp                 ; $6e40: $08 $4c $01
+    ld [$014c], sp                                ; $6e40: $08 $4c $01
     ld e, c                                       ; $6e43: $59
     inc b                                         ; $6e44: $04
     ld l, d                                       ; $6e45: $6a

@@ -2089,7 +2089,7 @@ jr_0c9_48f5:
     rst $38                                       ; $4957: $ff
     inc h                                         ; $4958: $24
     rst $38                                       ; $4959: $ff
-    ld bc, HeaderManufacturerCode                 ; $495a: $01 $3f $01
+    ld bc, $013f                 ; $495a: $01 $3f $01
     ld [hl+], a                                   ; $495d: $22
     ccf                                           ; $495e: $3f
     ld b, l                                       ; $495f: $45

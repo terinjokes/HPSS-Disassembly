@@ -614,94 +614,9 @@ Jump_000_00ff:
 Boot::
     db $00, $c3, $50, $01
 
-HeaderLogo::
-    db $ce, $ed, $66, $66
-
-    db $cc, $0d, $00, $0b, $03
-
-Call_000_010d:
-    ld [hl], e                                    ; $010d: $73
-
-    db $00, $83, $00, $0c, $00, $0d, $00, $08, $11, $1f, $88
-
-Call_000_0119:
-    adc c                                         ; $0119: $89
-
-    db $00, $0e, $dc, $cc, $6e, $e6
-
-Call_000_0120:
-Jump_000_0120:
-    db $dd                                        ; $0120: $dd
-
-    db $dd, $d9
-
-Jump_000_0123:
-    sbc c                                         ; $0123: $99
-
-    db $bb, $bb, $67, $63
-
-Jump_000_0128:
-    ld l, [hl]                                    ; $0128: $6e
-
-    db $0e, $ec
-
-Call_000_012b:
-Jump_000_012b:
-    db $cc                                        ; $012b: $cc
-
-    db $dd, $dc, $99, $9f, $bb, $b9, $33, $3e
-
-HeaderTitle::
-    db "HA"
-
-    db $52
-
-    ld d, d                                       ; $0137: $52
-
-Jump_000_0138:
-    ld e, c                                       ; $0138: $59
-
-    db $50
-
-    ld c, a                                       ; $013a: $4f
-
-    db $54, $54, $45, $52
-
-HeaderManufacturerCode::
-    db "BHVE"
-
-HeaderCGBFlag::
-    db $c0
-
-HeaderNewLicenseeCode::
-    db $36, $39
-
-HeaderSGBFlag::
-    db $00
-
-HeaderCartridgeType::
-    db $1b
-
-HeaderROMSize::
-    db $07
-
-HeaderRAMSize::
-    db $02
-
-HeaderDestinationCode::
-    db $01
-
-HeaderOldLicenseeCode::
-    db $33
-
-HeaderMaskROMVersion::
-    db $00
-
-HeaderComplementCheck::
-    db $d7
-
-HeaderGlobalChecksum::
-    db $b4, $78
+    ;;  The header is created by rgbfix after linking.
+    ;;  This reserves the space used by the header.
+    ds $150 - $104
 
     and a                                         ; $0150: $a7
 

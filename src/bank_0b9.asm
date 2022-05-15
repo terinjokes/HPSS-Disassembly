@@ -9556,7 +9556,7 @@ jr_0b9_768b:
     add sp, $1c                                   ; $772a: $e8 $1c
     adc h                                         ; $772c: $8c
     ld sp, $420f                                  ; $772d: $31 $0f $42
-    ld sp, HeaderSGBFlag                          ; $7730: $31 $46 $01
+    ld sp, $0146                          ; $7730: $31 $46 $01
     nop                                           ; $7733: $00
     sub a                                         ; $7734: $97
     add hl, bc                                    ; $7735: $09

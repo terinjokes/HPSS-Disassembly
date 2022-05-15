@@ -2445,7 +2445,7 @@ jr_090_5ea6:
     rst $38                                       ; $5f07: $ff
     or a                                          ; $5f08: $b7
     rst $08                                       ; $5f09: $cf
-    call Call_000_0119                            ; $5f0a: $cd $19 $01
+    db $cd, $19, $01                              ; $5f0a: $cd $19 $01
     cp $0f                                        ; $5f0d: $fe $0f
     ldh a, [rSB]                                  ; $5f0f: $f0 $01
 

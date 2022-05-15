@@ -1745,7 +1745,7 @@ jr_0b7_4718:
 
     inc b                                         ; $471a: $04
     ld d, e                                       ; $471b: $53
-    ld [HeaderComplementCheck], sp                ; $471c: $08 $4d $01
+    ld [$014d], sp                ; $471c: $08 $4d $01
     cp [hl]                                       ; $471f: $be
     inc d                                         ; $4720: $14
     ret z                                         ; $4721: $c8
@@ -11604,7 +11604,7 @@ jr_0b7_6eaa:
     ld [hl], c                                    ; $6eb4: $71
     inc l                                         ; $6eb5: $2c
     inc [hl]                                      ; $6eb6: $34
-    ld sp, HeaderROMSize                          ; $6eb7: $31 $48 $01
+    ld sp, $0148                          ; $6eb7: $31 $48 $01
     inc b                                         ; $6eba: $04
     sub [hl]                                      ; $6ebb: $96
     ld e, h                                       ; $6ebc: $5c
@@ -13328,7 +13328,7 @@ jr_0b7_75fa:
     ld a, d                                       ; $7624: $7a
     add e                                         ; $7625: $83
     ld d, l                                       ; $7626: $55
-    jp nz, Jump_000_0128                          ; $7627: $c2 $28 $01
+    jp nz, $0128                                  ; $7627: $c2 $28 $01
 
     nop                                           ; $762a: $00
     rst $08                                       ; $762b: $cf

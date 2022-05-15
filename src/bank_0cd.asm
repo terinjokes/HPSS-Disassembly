@@ -1801,7 +1801,7 @@ jr_0cd_47d3:
     jr nz, jr_0cd_47d5                            ; $47d3: $20 $00
 
 jr_0cd_47d5:
-    jp z, Jump_000_0138                           ; $47d5: $ca $38 $01
+    jp z, $0138                                   ; $47d5: $ca $38 $01
 
     jp nz, $0100                                  ; $47d8: $c2 $00 $01
 
@@ -7213,7 +7213,7 @@ jr_0cd_5faa:
     jr nz, jr_0cd_5fac                            ; $5faa: $20 $00
 
 jr_0cd_5fac:
-    jp z, Jump_000_0138                           ; $5fac: $ca $38 $01
+    jp z, $0138                                   ; $5fac: $ca $38 $01
 
     jp nz, $0100                                  ; $5faf: $c2 $00 $01
 
@@ -10183,7 +10183,7 @@ jr_0cd_6cc8:
     ld bc, $3c18                                  ; $6d00: $01 $18 $3c
     ld e, b                                       ; $6d03: $58
     add [hl]                                      ; $6d04: $86
-    ld [HeaderRAMSize], sp                        ; $6d05: $08 $49 $01
+    ld [$0149], sp                                ; $6d05: $08 $49 $01
     jr jr_0cd_6d52                                ; $6d08: $18 $48
 
     ld a, [de]                                    ; $6d0a: $1a

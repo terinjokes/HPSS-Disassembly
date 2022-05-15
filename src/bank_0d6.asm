@@ -4926,7 +4926,7 @@ jr_0d6_5799:
     inc d                                         ; $57a3: $14
     nop                                           ; $57a4: $00
     ld b, [hl]                                    ; $57a5: $46
-    ld de, HeaderDestinationCode                  ; $57a6: $11 $4a $01
+    ld de, $014a                  ; $57a6: $11 $4a $01
     ld d, h                                       ; $57a9: $54
     ld [bc], a                                    ; $57aa: $02
     rrca                                          ; $57ab: $0f
@@ -5847,7 +5847,7 @@ jr_0d6_5b8c:
     inc d                                         ; $5bbf: $14
     ld b, b                                       ; $5bc0: $40
     nop                                           ; $5bc1: $00
-    ld de, HeaderNewLicenseeCode                  ; $5bc2: $11 $44 $01
+    ld de, $0144                  ; $5bc2: $11 $44 $01
     ld d, h                                       ; $5bc5: $54
     inc hl                                        ; $5bc6: $23
     and b                                         ; $5bc7: $a0
@@ -11243,7 +11243,7 @@ jr_0d6_7330:
     nop                                           ; $7370: $00
     nop                                           ; $7371: $00
     nop                                           ; $7372: $00
-    ld hl, HeaderGlobalChecksum                   ; $7373: $21 $4e $01
+    ld hl, $014e                   ; $7373: $21 $4e $01
     ld l, [hl]                                    ; $7376: $6e
     inc c                                         ; $7377: $0c
     db $10                                        ; $7378: $10

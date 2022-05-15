@@ -9048,7 +9048,7 @@ jr_0a7_6662:
     ld b, $01                                     ; $6678: $06 $01
     inc b                                         ; $667a: $04
     ld [bc], a                                    ; $667b: $02
-    ld bc, HeaderLogo                             ; $667c: $01 $04 $01
+    ld bc, $0104                                  ; $667c: $01 $04 $01
     ld a, [bc]                                    ; $667f: $0a
     ld [$0a00], sp                                ; $6680: $08 $00 $0a
     ld bc, $1600                                  ; $6683: $01 $00 $16
@@ -9550,7 +9550,7 @@ jr_0a7_68a1:
     rst $38                                       ; $68a5: $ff
     inc h                                         ; $68a6: $24
     ld a, c                                       ; $68a7: $79
-    ld bc, HeaderGlobalChecksum                   ; $68a8: $01 $4e $01
+    ld bc, $014e                                  ; $68a8: $01 $4e $01
     ld b, a                                       ; $68ab: $47
     sub b                                         ; $68ac: $90
     nop                                           ; $68ad: $00

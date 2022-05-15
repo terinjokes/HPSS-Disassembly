@@ -10316,7 +10316,7 @@ jr_0c3_7c9c:
     nop                                           ; $7ca9: $00
     and $03                                       ; $7caa: $e6 $03
     add e                                         ; $7cac: $83
-    ld bc, HeaderOldLicenseeCode                  ; $7cad: $01 $4b $01
+    ld bc, $014b                  ; $7cad: $01 $4b $01
     sub a                                         ; $7cb0: $97
     nop                                           ; $7cb1: $00
     nop                                           ; $7cb2: $00

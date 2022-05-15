@@ -2169,7 +2169,7 @@ jr_0ca_49c1:
     cp a                                          ; $49c1: $bf
     nop                                           ; $49c2: $00
     inc de                                        ; $49c3: $13
-    ld bc, HeaderSGBFlag                          ; $49c4: $01 $46 $01
+    ld bc, $0146                                  ; $49c4: $01 $46 $01
 
 jr_0ca_49c7:
     inc de                                        ; $49c7: $13
@@ -2533,7 +2533,7 @@ jr_0ca_4b62:
 
 jr_0ca_4b67:
     ld bc, $8101                                  ; $4b67: $01 $01 $81
-    ld bc, HeaderOldLicenseeCode                  ; $4b6a: $01 $4b $01
+    ld bc, $014b                                  ; $4b6a: $01 $4b $01
     nop                                           ; $4b6d: $00
     cp $03                                        ; $4b6e: $fe $03
     ld d, l                                       ; $4b70: $55
@@ -2766,7 +2766,7 @@ jr_0ca_4c62:
     rra                                           ; $4c78: $1f
     inc bc                                        ; $4c79: $03
     db $10                                        ; $4c7a: $10
-    ld de, HeaderNewLicenseeCode                  ; $4c7b: $11 $44 $01
+    ld de, $0144                                  ; $4c7b: $11 $44 $01
     ld [hl], b                                    ; $4c7e: $70
     nop                                           ; $4c7f: $00
     ld d, c                                       ; $4c80: $51
