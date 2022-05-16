@@ -12883,7 +12883,7 @@ Call_017_76b9:
     xor h                                         ; $76b9: $ac
 
 Call_017_76ba:
-    jp c, Jump_000_0151                           ; $76ba: $da $51 $01
+    db $da, $51, $01                              ; $76ba: $da $51 $01
 
     inc hl                                        ; $76bd: $23
     jr nz, jr_017_76c3                            ; $76be: $20 $03

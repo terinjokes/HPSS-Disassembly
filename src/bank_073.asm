@@ -2787,7 +2787,7 @@ jr_073_4aee:
 jr_073_4ba3:
     ld [$08f8], sp                                ; $4ba3: $08 $f8 $08
     cp $1c                                        ; $4ba6: $fe $1c
-    call c, Call_000_2808                         ; $4ba8: $dc $08 $28
+    db $dc, $08, $28                              ; $4ba8: $dc $08 $28
     nop                                           ; $4bab: $00
     call z, Call_000_1e04                         ; $4bac: $cc $04 $1e
     ld c, $ff                                     ; $4baf: $0e $ff
@@ -2809,7 +2809,7 @@ jr_073_4ba3:
     rst $28                                       ; $4bc2: $ef
     ld [$08db], sp                                ; $4bc3: $08 $db $08
     cp $1c                                        ; $4bc6: $fe $1c
-    call c, Call_000_2808                         ; $4bc8: $dc $08 $28
+    db $dc, $08, $28                              ; $4bc8: $dc $08 $28
     nop                                           ; $4bcb: $00
     call z, Call_000_1e04                         ; $4bcc: $cc $04 $1e
     ld c, $00                                     ; $4bcf: $0e $00

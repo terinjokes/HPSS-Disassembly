@@ -12376,7 +12376,7 @@ jr_030_7596:
     cp a                                          ; $75a9: $bf
     ld c, $c6                                     ; $75aa: $0e $c6
     xor l                                         ; $75ac: $ad
-    jp nc, Jump_000_018e                          ; $75ad: $d2 $8e $01
+    db $d2, $8e, $01                              ; $75ad: $d2 $8e $01
 
     ld l, h                                       ; $75b0: $6c
     ret nz                                        ; $75b1: $c0

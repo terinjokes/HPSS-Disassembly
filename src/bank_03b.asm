@@ -8229,7 +8229,7 @@ Call_03b_63da:
 
     ld h, c                                       ; $648c: $61
     call z, $c4d5                                 ; $648d: $cc $d5 $c4
-    call nc, Call_000_017b                        ; $6490: $d4 $7b $01
+    db $d4, $7b, $01                              ; $6490: $d4 $7b $01
     cpl                                           ; $6493: $2f
     inc [hl]                                      ; $6494: $34
     sbc h                                         ; $6495: $9c

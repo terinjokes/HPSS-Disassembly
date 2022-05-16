@@ -10530,7 +10530,7 @@ jr_03c_6d8e:
 
 jr_03c_6dd2:
     adc c                                         ; $6dd2: $89
-    call nc, Call_000_017b                        ; $6dd3: $d4 $7b $01
+    db $d4, $7b, $01                              ; $6dd3: $d4 $7b $01
     sub h                                         ; $6dd6: $94
     call c, Call_000_2501                         ; $6dd7: $dc $01 $25
     or [hl]                                       ; $6dda: $b6

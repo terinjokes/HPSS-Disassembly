@@ -3150,7 +3150,7 @@ jr_03e_4db9:
     and [hl]                                      ; $4dc8: $a6
     ld h, [hl]                                    ; $4dc9: $66
     sub h                                         ; $4dca: $94
-    call nc, Call_000_017b                        ; $4dcb: $d4 $7b $01
+    db $d4, $7b, $01                              ; $4dcb: $d4 $7b $01
     ld b, h                                       ; $4dce: $44
     db $fd                                        ; $4dcf: $fd
     adc $e3                                       ; $4dd0: $ce $e3
@@ -3901,7 +3901,7 @@ jr_03e_5117:
     ld a, [de]                                    ; $511e: $1a
     cp e                                          ; $511f: $bb
     sub $69                                       ; $5120: $d6 $69
-    call nz, Call_000_017b                        ; $5122: $c4 $7b $01
+    db $c4, $7b, $01                              ; $5122: $c4 $7b $01
     adc [hl]                                      ; $5125: $8e
     ld a, [hl-]                                   ; $5126: $3a
     ld l, e                                       ; $5127: $6b

@@ -10236,7 +10236,7 @@ jr_03f_6cd3:
     ld a, [de]                                    ; $6cf6: $1a
     ld b, [hl]                                    ; $6cf7: $46
     ld h, d                                       ; $6cf8: $62
-    call z, Call_000_017b                         ; $6cf9: $cc $7b $01
+    db $cc, $7b, $01                              ; $6cf9: $cc $7b $01
     ld [c], a                                     ; $6cfc: $e2
     ret c                                         ; $6cfd: $d8
 

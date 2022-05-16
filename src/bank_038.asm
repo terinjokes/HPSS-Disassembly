@@ -13691,7 +13691,7 @@ Call_038_7bb0:
     and h                                         ; $7bc3: $a4
     rst $08                                       ; $7bc4: $cf
     ld a, [bc]                                    ; $7bc5: $0a
-    call c, Call_000_0191                         ; $7bc6: $dc $91 $01
+    db $dc, $91, $01                              ; $7bc6: $dc $91 $01
     ldh a, [$b3]                                  ; $7bc9: $f0 $b3
     ld h, [hl]                                    ; $7bcb: $66
     adc $8c                                       ; $7bcc: $ce $8c

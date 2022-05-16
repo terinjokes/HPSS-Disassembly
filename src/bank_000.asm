@@ -612,74 +612,70 @@ Jump_000_00ff:
 
 
 Boot::
-    db $00, $c3, $50, $01
+    nop
+    jp Start
 
     ;;  The header is created by rgbfix after linking.
     ;;  This reserves the space used by the header.
     ds $150 - $104
 
-    and a                                         ; $0150: $a7
+Start::
+    and a                       ; clear flags
+    cp BOOTUP_A_CGB             ; is Game Boy Color?
 
-Jump_000_0151:
-    cp $11                                        ; $0151: $fe $11
+    ld a, $00                   ; set a to 0
+    jr nz, .notGBC              ; if not GBC:
+    inc a                       ;    increment a (a=1)
 
-    db $3e, $00, $20, $01, $3c
+.notGBC
+    ldh [$ef], a                ; save GBC value
+    ld sp, $cfff                ; setup stack pointer
+    ldh a, [$ef]
+    or a
+    call z, Call_000_2808       ; call if not GBC
 
-    ldh [$ef], a                                  ; $0158: $e0 $ef
-
-    db $31, $ff, $cf, $f0, $ef, $b7, $cc, $08, $28, $31, $ff, $cf, $f3
+    ld sp, $cfff                ; setup stack pointer (again?)
+    di                          ; disable interrupts
 
     ldh a, [$ef]                                  ; $0167: $f0 $ef
 
-    db $f5, $3e
+    push af
 
-    inc bc                                        ; $016b: $03
-
-    db $ea, $00, $20, $cd, $36
-
-Jump_000_0171:
-    ld a, l                                       ; $0171: $7d
+    ld a, $03
+    ld [rROMB0], a               ; load bank 3
+    call Call_003_7d36
 
     pop af                                        ; $0172: $f1
 
-Jump_000_0173:
     ldh [$ef], a                                  ; $0173: $e0 $ef
     ld a, $07                                     ; $0175: $3e $07
     ldh [rWX], a                                  ; $0177: $e0 $4b
     ld a, $91                                     ; $0179: $3e $91
-
-Call_000_017b:
-Jump_000_017b:
     ldh [rWY], a                                  ; $017b: $e0 $4a
 
-    db $cd, $c3, $38, $3e, $01, $ea, $00, $20, $cd
+    call Call_000_38c3
 
-    ld b, a                                       ; $0186: $47
+    ld a, $01
+    ld [rROMB0], a              ; load bank 1
+    call Call_001_4647
 
-Jump_000_0187:
-    ld b, [hl]                                    ; $0187: $46
-
-Call_000_0188:
     call Call_000_3a66                            ; $0188: $cd $66 $3a
 
-Jump_000_018b:
-    ld hl, $ffff                                  ; $018b: $21 $ff $ff
+    ld hl, rIE                                    ; $018b: $21 $ff $ff
+    set 0, [hl]                 ; enable V-Blank interrupt
 
-Jump_000_018e:
-    set 0, [hl]                                   ; $018e: $cb $c6
+    ld a, $04
+    ld [rROMB0], a              ; load bank 4
 
-    db $3e
+    call Call_004_55e7                            ; $0195: $cd $e7 $55
 
-Call_000_0191:
-    inc b                                         ; $0191: $04
+    ld a, $01
+    ld [rROMB0], a              ; load bank 1
 
-    db $ea, $00, $20
+    call Call_001_644f
+    call Call_000_23ad
 
-    call $55e7                                    ; $0195: $cd $e7 $55
-
-    db $3e, $01, $ea, $00, $20, $cd, $4f, $64, $cd, $ad, $23
-
-    ei                                            ; $01a3: $fb
+    ei                          ; enable interrupts
 
 Call_000_01a4:
 jr_000_01a4:
@@ -11085,6 +11081,7 @@ Jump_000_23ac:
     reti                                          ; $23ac: $d9
 
 
+Call_000_23ad:
     ld a, $ff                                     ; $23ad: $3e $ff
 
 Jump_000_23af:
@@ -17303,6 +17300,7 @@ Call_000_38c0:
     reti                                          ; $38c2: $d9
 
 
+Call_000_38c3:
     push bc                                       ; $38c3: $c5
 
 Call_000_38c4:

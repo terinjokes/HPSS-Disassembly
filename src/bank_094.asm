@@ -3071,7 +3071,7 @@ jr_094_4d49:
     add sp, $06                                   ; $4d49: $e8 $06
     rlca                                          ; $4d4b: $07
     rlca                                          ; $4d4c: $07
-    jp c, Jump_000_018b                           ; $4d4d: $da $8b $01
+    db $da, $8b, $01                              ; $4d4d: $da $8b $01
 
     cp [hl]                                       ; $4d50: $be
     ld b, $aa                                     ; $4d51: $06 $aa

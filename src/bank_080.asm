@@ -10326,7 +10326,7 @@ Jump_080_6ad1:
     ld c, e                                       ; $6f06: $4b
     ld d, c                                       ; $6f07: $51
     xor $ef                                       ; $6f08: $ee $ef
-    jp nc, Jump_000_0151                          ; $6f0a: $d2 $51 $01
+    db $d2, $51, $01                              ; $6f0a: $d2 $51 $01
 
     ld [hl+], a                                   ; $6f0d: $22
     add b                                         ; $6f0e: $80

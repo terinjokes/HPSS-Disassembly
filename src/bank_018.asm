@@ -12454,7 +12454,7 @@ jr_018_72c0:
     ld b, l                                       ; $72c3: $45
     adc d                                         ; $72c4: $8a
     cp l                                          ; $72c5: $bd
-    jp c, Jump_000_0173                           ; $72c6: $da $73 $01
+    db $da, $73, $01                              ; $72c6: $da $73 $01
 
     ld [hl], $ae                                  ; $72c9: $36 $ae
     db $db                                        ; $72cb: $db
