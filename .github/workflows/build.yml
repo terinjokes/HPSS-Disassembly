@@ -1,0 +1,14 @@
+name: "Build hpss.gbc"
+on:
+  pull_request:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v17
+        with:
+          nix_path: nixpkgs=channel:nixos-21.11
+      - run: nix-shell --pure --run "gup -uj$(nproc) hpss.gbc"
+      - run: sha256sum -c hpss.sha256
