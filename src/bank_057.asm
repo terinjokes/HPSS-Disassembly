@@ -2905,7 +2905,7 @@ jr_057_4c4b:
     dec c                                         ; $4ca9: $0d
     ld e, h                                       ; $4caa: $5c
     ld c, d                                       ; $4cab: $4a
-    call z, Call_000_32c1                         ; $4cac: $cc $c1 $32
+    db $cc, $c1, $32                              ; $4cac: $cc $c1 $32
     rst $10                                       ; $4caf: $d7
     add sp, $57                                   ; $4cb0: $e8 $57
     db $ed                                        ; $4cb2: $ed

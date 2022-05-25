@@ -632,7 +632,7 @@ Start::
     ld sp, $cfff                ; setup stack pointer
     ldh a, [$ef]
     or a
-    call z, Call_000_2808       ; call if not GBC
+    call z, Unknown_Non_GBC     ; call if not GBC
 
     ld sp, $cfff                ; setup stack pointer (again?)
     di                          ; disable interrupts
@@ -5914,28 +5914,30 @@ Jump_000_11b7:
     ret                                           ; $11bc: $c9
 
 
-Call_000_11bd:
+    ;; Set the LCD Scroll X/Y coordinates of the visible 160x144 pixel area
+    ;;      $ffc8: Scroll X coordinate
+    ;;      $ffc9: Scroll Y coordinate
+LCDScroll:
     ldh a, [$c8]                                  ; $11bd: $f0 $c8
-
-Call_000_11bf:
     ldh [rSCX], a                                 ; $11bf: $e0 $43
     ldh a, [$c9]                                  ; $11c1: $f0 $c9
     ldh [rSCY], a                                 ; $11c3: $e0 $42
     ret                                           ; $11c5: $c9
 
+    ;; NOTE(terin): Pan Docs notes that this is potentially damaging to real
+    ;; hardware if it was called outside of VBlank periods. A safer version is
+    ;; at LCDOff (in bank 1).
+    ;;
+    ;; https://gbdev.io/pandocs/LCDC.html#lcdc7---lcd-enable
+UnsafeLCDOff:
+    ld hl, rLCDC
+    res 7, [hl]
+    ret
 
-    ld hl, $ff40                                  ; $11c6: $21 $40 $ff
-
-Jump_000_11c9:
-    res 7, [hl]                                   ; $11c9: $cb $be
-    ret                                           ; $11cb: $c9
-
-
-Call_000_11cc:
-    ld hl, $ff40                                  ; $11cc: $21 $40 $ff
-    set 7, [hl]                                   ; $11cf: $cb $fe
-    ret                                           ; $11d1: $c9
-
+LCDOn:
+    ld hl, rLCDC
+    set 7, [hl]
+    ret
 
 Jump_000_11d2:
     ld c, $00                                     ; $11d2: $0e $00
@@ -7327,7 +7329,7 @@ Call_000_16a6:
     ld [$2000], a                                 ; $16ae: $ea $00 $20
     call $43d5                                    ; $16b1: $cd $d5 $43
     call Call_000_01d1                            ; $16b4: $cd $d1 $01
-    call Call_000_11bd                            ; $16b7: $cd $bd $11
+    call LCDScroll                                ; $16b7: $cd $bd $11
     ld a, $01                                     ; $16ba: $3e $01
     ld [$2000], a                                 ; $16bc: $ea $00 $20
     call $7128                                    ; $16bf: $cd $28 $71
@@ -7375,7 +7377,7 @@ jr_000_16f9:
 
 Call_000_16fb:
     ld [$2000], a                                 ; $16fb: $ea $00 $20
-    call Call_000_11cc                            ; $16fe: $cd $cc $11
+    call LCDOn                                    ; $16fe: $cd $cc $11
     ld a, $01                                     ; $1701: $3e $01
     ld e, $01                                     ; $1703: $1e $01
     push af                                       ; $1705: $f5
@@ -12330,52 +12332,39 @@ Jump_000_2807:
     ret                                           ; $2807: $c9
 
 
-Call_000_2808:
-    ld a, $01                                     ; $2808: $3e $01
-    ld [$2000], a                                 ; $280a: $ea $00 $20
+Unknown_Non_GBC:
+    ld a, $01
+    ld [rROMB0], a              ; load bank 1
+    call LCDOff
 
-Jump_000_280d:
-    call $4625                                    ; $280d: $cd $25 $46
-
-Jump_000_2810:
-    ld a, $e4                                     ; $2810: $3e $e4
-
-Jump_000_2812:
+    ld a, %11_10_01_00                            ; $2810: $3e $e4
     ldh [rBGP], a                                 ; $2812: $e0 $47
 
-Call_000_2814:
-    xor a                                         ; $2814: $af
-    ldh [rSTAT], a                                ; $2815: $e0 $41
+    xor a                       ; (a = 0)
+    ldh [rSTAT], a
 
-Call_000_2817:
-Jump_000_2817:
-    inc a                                         ; $2817: $3c
-    ldh [rLCDC], a                                ; $2818: $e0 $40
-    inc a                                         ; $281a: $3c
-    ldh [$a7], a                                  ; $281b: $e0 $a7
+    inc a                       ; (a = 1)
+    ldh [rLCDC], a
+    inc a                       ; (a = 2)
+    ldh [$a7], a
+
     ld a, $59                                     ; $281d: $3e $59
     ld de, $0080                                  ; $281f: $11 $80 $00
     call Call_000_28e1                            ; $2822: $cd $e1 $28
 
-Jump_000_2825:
-    ld hl, $ffc8                                  ; $2825: $21 $c8 $ff
-    ld [hl], $00                                  ; $2828: $36 $00
-    inc hl                                        ; $282a: $23
+    ;; display from (0,0)
+    ld hl, $ffc8
+    ld [hl], $00
+    inc hl
+    ld [hl], $00
+    call LCDScroll
 
-Call_000_282b:
-    ld [hl], $00                                  ; $282b: $36 $00
+    call LCDOn
 
-Jump_000_282d:
-    call Call_000_11bd                            ; $282d: $cd $bd $11
-
-Call_000_2830:
-    call Call_000_11cc                            ; $2830: $cd $cc $11
-
-Jump_000_2833:
-jr_000_2833:
-    halt                                          ; $2833: $76
-    nop                                           ; $2834: $00
-    jr jr_000_2833                                ; $2835: $18 $fc
+:
+    halt
+    nop
+    jr :-
 
 Jump_000_2837:
     ld de, $cd06                                  ; $2837: $11 $06 $cd
@@ -12430,7 +12419,7 @@ Jump_000_285e:
     ld [hl], $00                                  ; $2869: $36 $00
     inc hl                                        ; $286b: $23
     ld [hl], $00                                  ; $286c: $36 $00
-    call Call_000_11bd                            ; $286e: $cd $bd $11
+    call LCDScroll                                ; $286e: $cd $bd $11
 
 Call_000_2871:
 Jump_000_2871:
@@ -12446,7 +12435,7 @@ Call_000_2877:
 jr_000_287e:
     call Call_000_01d1                            ; $287e: $cd $d1 $01
     call Call_000_0211                            ; $2881: $cd $11 $02
-    call Call_000_11cc                            ; $2884: $cd $cc $11
+    call LCDOn                                    ; $2884: $cd $cc $11
     ld a, [$cd11]                                 ; $2887: $fa $11 $cd
     ld e, a                                       ; $288a: $5f
 
@@ -14983,7 +14972,7 @@ Jump_000_311c:
 
 Jump_000_311e:
     call Call_000_38e8                            ; $311e: $cd $e8 $38
-    call Call_000_11cc                            ; $3121: $cd $cc $11
+    call LCDOn                                    ; $3121: $cd $cc $11
 
 Jump_000_3124:
     call Call_000_3807                            ; $3124: $cd $07 $38
@@ -15592,39 +15581,30 @@ Jump_000_32b7:
     db $01                                        ; $32b7: $01
     rlca                                          ; $32b8: $07
 
+
 Call_000_32b9:
     ld c, a                                       ; $32b9: $4f
 
-Call_000_32ba:
+    ;; hl=hl+3(c)
     ld b, $00                                     ; $32ba: $06 $00
     add hl, bc                                    ; $32bc: $09
     add hl, bc                                    ; $32bd: $09
 
 Call_000_32be:
-Jump_000_32be:
     add hl, bc                                    ; $32be: $09
 
 Call_000_32bf:
-    ld a, $07                                     ; $32bf: $3e $07
+    ld a, $07
+    ld [rROMB0], a              ; load bank 7
 
-Call_000_32c1:
-    ld [$2000], a                                 ; $32c1: $ea $00 $20
-
-Jump_000_32c4:
-    ld a, [hl+]                                   ; $32c4: $2a
-
-Call_000_32c5:
-    ld c, [hl]                                    ; $32c5: $4e
-
-Jump_000_32c6:
-    inc hl                                        ; $32c6: $23
-    ld h, [hl]                                    ; $32c7: $66
-
-Call_000_32c8:
-Jump_000_32c8:
-    ld l, c                                       ; $32c8: $69
-    ld [$2000], a                                 ; $32c9: $ea $00 $20
-    ret                                           ; $32cc: $c9
+    ;; lookup table at hl has [bank, l, h]
+    ld a, [hl+]
+    ld c, [hl]
+    inc hl
+    ld h, [hl]
+    ld l, c
+    ld [rROMB0], a              ; load dynamic bank
+    ret
 
 
 Call_000_32cd:
@@ -16866,7 +16846,7 @@ Call_000_36fc:
     call $5e59                                    ; $36ff: $cd $59 $5e
 
 jr_000_3702:
-    call Call_000_11bd                            ; $3702: $cd $bd $11
+    call LCDScroll                                ; $3702: $cd $bd $11
     ld a, [$c0cc]                                 ; $3705: $fa $cc $c0
 
 Call_000_3708:

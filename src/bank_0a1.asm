@@ -5444,7 +5444,7 @@ jr_0a1_57e5:
     db $ed                                        ; $57f2: $ed
     cp b                                          ; $57f3: $b8
     ld b, a                                       ; $57f4: $47
-    call nc, Call_000_282b                        ; $57f5: $d4 $2b $28
+    db $d4, $2b, $28                              ; $57f5: $d4 $2b $28
     sub $82                                       ; $57f8: $d6 $82
     db $10                                        ; $57fa: $10
     ld d, [hl]                                    ; $57fb: $56

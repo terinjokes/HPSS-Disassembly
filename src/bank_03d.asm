@@ -6455,7 +6455,7 @@ Jump_03d_5b9d:
     ld c, b                                       ; $5bac: $48
     sbc l                                         ; $5bad: $9d
     rst $20                                       ; $5bae: $e7
-    jp nz, Jump_000_32c6                          ; $5baf: $c2 $c6 $32
+    db $c2, $c6, $32                              ; $5baf: $c2 $c6 $32
 
     rst $08                                       ; $5bb2: $cf
     ld a, c                                       ; $5bb3: $79

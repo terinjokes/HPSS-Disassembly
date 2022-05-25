@@ -14818,7 +14818,7 @@ Call_05a_7f3f:
     or $fc                                        ; $7f7d: $f6 $fc
 
 Jump_05a_7f7f:
-    jp c, Jump_000_32be                           ; $7f7f: $da $be $32
+    db $da, $be, $32                              ; $7f7f: $da $be $32
 
     sub $1d                                       ; $7f82: $d6 $1d
     jr nc, jr_05a_7fe3                            ; $7f84: $30 $5d

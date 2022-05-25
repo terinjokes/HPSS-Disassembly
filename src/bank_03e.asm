@@ -12624,7 +12624,7 @@ jr_03e_77a4:
     jr z, jr_03e_77a4                             ; $77f1: $28 $b1
 
     ld sp, hl                                     ; $77f3: $f9
-    call c, Call_000_2817                         ; $77f4: $dc $17 $28
+    db $dc, $17, $28                              ; $77f4: $dc $17 $28
     rst $20                                       ; $77f7: $e7
     cp c                                          ; $77f8: $b9
     add sp, -$2a                                  ; $77f9: $e8 $d6

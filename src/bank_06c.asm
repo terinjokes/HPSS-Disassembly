@@ -4837,7 +4837,7 @@ Jump_06c_54ef:
     xor l                                         ; $5501: $ad
     sbc h                                         ; $5502: $9c
     or l                                          ; $5503: $b5
-    call z, Call_000_32ba                         ; $5504: $cc $ba $32
+    db $cc, $ba, $32                              ; $5504: $cc $ba $32
     ld a, d                                       ; $5507: $7a
     ld [hl], l                                    ; $5508: $75
     ld l, c                                       ; $5509: $69
@@ -7137,7 +7137,7 @@ Jump_06c_5eb6:
     jp $9d51                                      ; $5ed6: $c3 $51 $9d
 
 
-    jp z, Jump_000_11c9                           ; $5ed9: $ca $c9 $11
+    db $ca, $c9, $11                              ; $5ed9: $ca $c9 $11
 
     or [hl]                                       ; $5edc: $b6
     dec e                                         ; $5edd: $1d
@@ -8945,7 +8945,7 @@ Jump_06c_6650:
     inc e                                         ; $66ab: $1c
     rst $20                                       ; $66ac: $e7
     xor c                                         ; $66ad: $a9
-    jp z, Jump_000_2825                           ; $66ae: $ca $25 $28
+    db $ca, $25, $28                              ; $66ae: $ca $25 $28
 
     ld d, e                                       ; $66b1: $53
     sub l                                         ; $66b2: $95
@@ -10239,7 +10239,7 @@ jr_06c_6bed:
     ld c, a                                       ; $6c1f: $4f
     xor d                                         ; $6c20: $aa
     and a                                         ; $6c21: $a7
-    jp z, Jump_000_11c9                           ; $6c22: $ca $c9 $11
+    db $ca, $c9, $11                              ; $6c22: $ca $c9 $11
 
     sub $e4                                       ; $6c25: $d6 $e4
     ld a, [de]                                    ; $6c27: $1a

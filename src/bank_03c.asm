@@ -6275,7 +6275,7 @@ jr_03c_5b37:
     sub [hl]                                      ; $5b66: $96
     sub h                                         ; $5b67: $94
     db $fd                                        ; $5b68: $fd
-    jp nz, Jump_000_32c6                          ; $5b69: $c2 $c6 $32
+    db $c2, $c6, $32                              ; $5b69: $c2 $c6 $32
 
     adc e                                         ; $5b6c: $8b
     ld h, e                                       ; $5b6d: $63

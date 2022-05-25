@@ -3316,7 +3316,7 @@ jr_070_4e33:
     cp $99                                        ; $4e3f: $fe $99
     dec h                                         ; $4e41: $25
     xor l                                         ; $4e42: $ad
-    call nc, Call_000_32c8                        ; $4e43: $d4 $c8 $32
+    db $d4, $c8, $32                              ; $4e43: $d4 $c8 $32
     set 1, c                                      ; $4e46: $cb $c9
     pop de                                        ; $4e48: $d1
     and $d2                                       ; $4e49: $e6 $d2

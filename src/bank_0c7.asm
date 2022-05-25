@@ -4971,7 +4971,7 @@ jr_0c7_54ea:
     rst $38                                       ; $54ff: $ff
 
 Jump_0c7_5500:
-    jp nc, Jump_000_280d                          ; $5500: $d2 $0d $28
+    db $d2, $0d, $28                              ; $5500: $d2 $0d $28
 
     rst $10                                       ; $5503: $d7
     push bc                                       ; $5504: $c5
@@ -7474,7 +7474,7 @@ jr_0c7_5fa3:
     ld d, l                                       ; $5fa5: $55
     xor d                                         ; $5fa6: $aa
     dec hl                                        ; $5fa7: $2b
-    call nc, Call_000_11bf                        ; $5fa8: $d4 $bf $11
+    db $d4, $bf, $11                              ; $5fa8: $d4 $bf $11
     nop                                           ; $5fab: $00
     rst $28                                       ; $5fac: $ef
     ld sp, $39c7                                  ; $5fad: $31 $c7 $39

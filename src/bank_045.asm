@@ -915,7 +915,7 @@ jr_045_43c1:
     ld a, l                                       ; $43cd: $7d
     inc a                                         ; $43ce: $3c
     ld b, a                                       ; $43cf: $47
-    jp nz, Jump_000_32c8                          ; $43d0: $c2 $c8 $32
+    db $c2, $c8, $32                              ; $43d0: $c2 $c8 $32
 
     ld l, h                                       ; $43d3: $6c
     ld a, a                                       ; $43d4: $7f

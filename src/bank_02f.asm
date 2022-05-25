@@ -13546,7 +13546,7 @@ jr_02f_7afc:
     add hl, hl                                    ; $7aff: $29
     adc d                                         ; $7b00: $8a
     ld a, l                                       ; $7b01: $7d
-    call Call_000_32c5                            ; $7b02: $cd $c5 $32
+    db $cd, $c5, $32                              ; $7b02: $cd $c5 $32
     rst $20                                       ; $7b05: $e7
     ld a, [$c6b4]                                 ; $7b06: $fa $b4 $c6
     ld [hl+], a                                   ; $7b09: $22

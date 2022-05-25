@@ -8573,7 +8573,7 @@ Jump_06d_64c8:
     ld [hl], l                                    ; $64f9: $75
     rla                                           ; $64fa: $17
     or e                                          ; $64fb: $b3
-    call z, Call_000_32ba                         ; $64fc: $cc $ba $32
+    db $cc, $ba, $32                              ; $64fc: $cc $ba $32
     adc h                                         ; $64ff: $8c
     xor e                                         ; $6500: $ab
     ret                                           ; $6501: $c9
@@ -11106,7 +11106,7 @@ Call_06d_6ef4:
     ld a, c                                       ; $6fd1: $79
     ld d, [hl]                                    ; $6fd2: $56
     rst $00                                       ; $6fd3: $c7
-    jp z, Jump_000_11c9                           ; $6fd4: $ca $c9 $11
+    db $ca, $c9, $11                              ; $6fd4: $ca $c9 $11
 
     sub l                                         ; $6fd7: $95
     db $e3                                        ; $6fd8: $e3

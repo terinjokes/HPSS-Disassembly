@@ -1391,30 +1391,33 @@ jr_001_4614:
     ldh [$c9], a                                  ; $4622: $e0 $c9
     ret                                           ; $4624: $c9
 
+LCDOff:
+    ;; save interrupts
+    ld hl, rIE
+    ld a, [hl]
+    ld [$cdbc], a
+    res 0, [hl]                 ; disable V-blank interrupts
 
-    ld hl, $ffff                                  ; $4625: $21 $ff $ff
-    ld a, [hl]                                    ; $4628: $7e
-    ld [$cdbc], a                                 ; $4629: $ea $bc $cd
-    res 0, [hl]                                   ; $462c: $cb $86
+.waitForLine125:
+    ldh a, [rLY]
+    cp 125
+    jr c, .waitForLine125
+    res 2, [hl]                 ; disable timer interrupts
 
-jr_001_462e:
-    ldh a, [rLY]                                  ; $462e: $f0 $44
-    cp $7d                                        ; $4630: $fe $7d
-    jr c, jr_001_462e                             ; $4632: $38 $fa
+.waitForVBlank:
+    ldh a, [rLY]
+    cp 145
+    jr c, .waitForVBlank
 
-    res 2, [hl]                                   ; $4634: $cb $96
+    ;; disable the LCD and PPU
+    ldh a, [rLCDC]
+    and $7f
+    ldh [rLCDC], a
 
-jr_001_4636:
-    ldh a, [rLY]                                  ; $4636: $f0 $44
-    cp $91                                        ; $4638: $fe $91
-    jr c, jr_001_4636                             ; $463a: $38 $fa
-
-    ldh a, [rLCDC]                                ; $463c: $f0 $40
-    and $7f                                       ; $463e: $e6 $7f
-    ldh [rLCDC], a                                ; $4640: $e0 $40
-    ld a, [$cdbc]                                 ; $4642: $fa $bc $cd
-    ld [hl], a                                    ; $4645: $77
-    ret                                           ; $4646: $c9
+    ;; restore interrupts
+    ld a, [$cdbc]
+    ld [hl], a
+    ret
 
 Call_001_4647:
     ldh a, [rKEY1]                                ; $4647: $f0 $4d

@@ -8654,7 +8654,7 @@ jr_0a0_65b4:
     inc e                                         ; $65bc: $1c
     ld [bc], a                                    ; $65bd: $02
     dec sp                                        ; $65be: $3b
-    call nz, Call_000_2830                        ; $65bf: $c4 $30 $28
+    db $c4, $30, $28                              ; $65bf: $c4 $30 $28
     sub d                                         ; $65c2: $92
     dec b                                         ; $65c3: $05
     jr nc, @+$12                                  ; $65c4: $30 $10

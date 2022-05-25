@@ -10009,7 +10009,7 @@ jr_097_6cf8:
     and a                                         ; $6d03: $a7
     cp d                                          ; $6d04: $ba
     rlca                                          ; $6d05: $07
-    call nc, Call_000_282b                        ; $6d06: $d4 $2b $28
+    db $d4, $2b, $28                              ; $6d06: $d4 $2b $28
     rst $10                                       ; $6d09: $d7
     nop                                           ; $6d0a: $00
     ld bc, $e6ff                                  ; $6d0b: $01 $ff $e6

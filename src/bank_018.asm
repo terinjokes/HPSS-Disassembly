@@ -13451,7 +13451,7 @@ jr_018_76d2:
     call z, $20b7                                 ; $76d5: $cc $b7 $20
     ld b, [hl]                                    ; $76d8: $46
     adc e                                         ; $76d9: $8b
-    call Call_000_32c8                            ; $76da: $cd $c8 $32
+    db $cd, $c8, $32                              ; $76da: $cd $c8 $32
     ld d, [hl]                                    ; $76dd: $56
     ld a, b                                       ; $76de: $78
     sbc d                                         ; $76df: $9a
