@@ -2690,7 +2690,7 @@ jr_09e_4bb8:
     ld h, b                                       ; $4bb9: $60
     or b                                          ; $4bba: $b0
     adc a                                         ; $4bbb: $8f
-    call z, Call_000_123e                         ; $4bbc: $cc $3e $12
+    db $cc, $3e, $12                              ; $4bbc: $cc $3e $12
     db $fc                                        ; $4bbf: $fc
     nop                                           ; $4bc0: $00
     ld a, [hl+]                                   ; $4bc1: $2a
@@ -13603,7 +13603,7 @@ jr_09e_7b7d:
     nop                                           ; $7b91: $00
     add hl, de                                    ; $7b92: $19
     nop                                           ; $7b93: $00
-    jp z, Jump_000_1201                           ; $7b94: $ca $01 $12
+    db $ca, $01, $12                              ; $7b94: $ca $01 $12
 
 jr_09e_7b97:
     nop                                           ; $7b97: $00

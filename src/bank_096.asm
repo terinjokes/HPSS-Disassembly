@@ -6892,7 +6892,7 @@ jr_096_5ec4:
     ld c, $10                                     ; $5ec6: $0e $10
     rst $28                                       ; $5ec8: $ef
     ld hl, $fd82                                  ; $5ec9: $21 $82 $fd
-    call z, Call_000_120d                         ; $5ecc: $cc $0d $12
+    db $cc, $0d, $12                              ; $5ecc: $cc $0d $12
     db $ed                                        ; $5ecf: $ed
     adc b                                         ; $5ed0: $88
     ld [hl], a                                    ; $5ed1: $77

@@ -3351,7 +3351,7 @@ jr_0ef_4efb:
     rst $38                                       ; $4f30: $ff
     ld b, e                                       ; $4f31: $43
     rst $38                                       ; $4f32: $ff
-    jp nz, Jump_000_11ff                          ; $4f33: $c2 $ff $11
+    db $c2, $ff, $11                              ; $4f33: $c2 $ff $11
 
     rst $38                                       ; $4f36: $ff
     dec c                                         ; $4f37: $0d
@@ -3484,7 +3484,7 @@ jr_0ef_4f94:
     rst $38                                       ; $4fc7: $ff
     ld b, e                                       ; $4fc8: $43
     rst $38                                       ; $4fc9: $ff
-    jp nz, Jump_000_11ff                          ; $4fca: $c2 $ff $11
+    db $c2, $ff, $11                              ; $4fca: $c2 $ff $11
 
     rst $38                                       ; $4fcd: $ff
     dec c                                         ; $4fce: $0d
@@ -3883,7 +3883,7 @@ Jump_0ef_517e:
     rst $38                                       ; $519c: $ff
     ld b, e                                       ; $519d: $43
     rst $38                                       ; $519e: $ff
-    jp nz, Jump_000_11ff                          ; $519f: $c2 $ff $11
+    db $c2, $ff, $11                              ; $519f: $c2 $ff $11
 
     rst $38                                       ; $51a2: $ff
     dec c                                         ; $51a3: $0d
@@ -4818,7 +4818,7 @@ jr_0ef_557d:
     rst $38                                       ; $55c7: $ff
     ld b, e                                       ; $55c8: $43
     rst $38                                       ; $55c9: $ff
-    jp nz, Jump_000_11ff                          ; $55ca: $c2 $ff $11
+    db $c2, $ff, $11                              ; $55ca: $c2 $ff $11
 
     rst $38                                       ; $55cd: $ff
     dec c                                         ; $55ce: $0d
@@ -4937,7 +4937,7 @@ jr_0ef_557d:
     rst $38                                       ; $5659: $ff
     ld b, e                                       ; $565a: $43
     rst $38                                       ; $565b: $ff
-    jp nz, Jump_000_11ff                          ; $565c: $c2 $ff $11
+    db $c2, $ff, $11                              ; $565c: $c2 $ff $11
 
     rst $38                                       ; $565f: $ff
     dec c                                         ; $5660: $0d

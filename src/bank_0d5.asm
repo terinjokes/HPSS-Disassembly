@@ -6060,7 +6060,7 @@ Call_0d5_5b59:
     ld e, b                                       ; $5b79: $58
     ld sp, $984a                                  ; $5b7a: $31 $4a $98
     inc h                                         ; $5b7d: $24
-    call z, Call_000_1200                         ; $5b7e: $cc $00 $12
+    call z, CopyHL2DE_29                         ; $5b7e: $cc $00 $12
     ld h, b                                       ; $5b81: $60
     adc h                                         ; $5b82: $8c
     jr nz, jr_0d5_5b47                            ; $5b83: $20 $c2

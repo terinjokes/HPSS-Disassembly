@@ -12896,7 +12896,7 @@ jr_047_7a17:
     ld a, l                                       ; $7ad1: $7d
     rst $00                                       ; $7ad2: $c7
     inc bc                                        ; $7ad3: $03
-    jp nz, Jump_000_1200                          ; $7ad4: $c2 $00 $12
+    jp nz, CopyHL2DE_29                          ; $7ad4: $c2 $00 $12
 
     cp a                                          ; $7ad7: $bf
     ld e, l                                       ; $7ad8: $5d

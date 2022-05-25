@@ -3351,7 +3351,7 @@ jr_036_4e7f:
     ld a, [c]                                     ; $4e8c: $f2
     ld [hl], d                                    ; $4e8d: $72
     ld c, a                                       ; $4e8e: $4f
-    call z, Call_000_1204                         ; $4e8f: $cc $04 $12
+    db $cc, $04, $12                              ; $4e8f: $cc $04 $12
     cp a                                          ; $4e92: $bf
     and l                                         ; $4e93: $a5
     ld h, l                                       ; $4e94: $65
@@ -4588,7 +4588,7 @@ Jump_036_53d2:
     ld h, c                                       ; $53f3: $61
     db $f4                                        ; $53f4: $f4
     halt                                          ; $53f5: $76
-    call nz, Call_000_1225                        ; $53f6: $c4 $25 $12
+    db $c4, $25, $12                              ; $53f6: $c4 $25 $12
     ld a, [$0e92]                                 ; $53f9: $fa $92 $0e
     ld e, d                                       ; $53fc: $5a
     ld [hl], b                                    ; $53fd: $70

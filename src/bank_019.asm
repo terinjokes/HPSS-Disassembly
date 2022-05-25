@@ -10543,7 +10543,7 @@ Jump_019_7a87:
     db $db                                        ; $7aaa: $db
     ld h, d                                       ; $7aab: $62
     ld de, $dd5b                                  ; $7aac: $11 $5b $dd
-    jp c, Jump_000_1242                           ; $7aaf: $da $42 $12
+    jp c, CopyHL2DE_7                           ; $7aaf: $da $42 $12
 
     ld a, h                                       ; $7ab2: $7c
     db $dd                                        ; $7ab3: $dd

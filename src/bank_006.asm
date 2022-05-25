@@ -3274,7 +3274,7 @@ jr_006_517e:
     ldh [rSVBK], a                                ; $51aa: $e0 $70
     ld de, $d28f                                  ; $51ac: $11 $8f $d2
     ld hl, $d080                                  ; $51af: $21 $80 $d0
-    call Call_000_11ee                            ; $51b2: $cd $ee $11
+    call CopyHL2DE_128                            ; $51b2: $cd $ee $11
     pop af                                        ; $51b5: $f1
     ldh [rSVBK], a                                ; $51b6: $e0 $70
     pop de                                        ; $51b8: $d1
@@ -4045,13 +4045,13 @@ jr_006_5583:
 
 Call_006_563b:
     ld de, $ff9c                                  ; $563b: $11 $9c $ff
-    call Call_000_124b                            ; $563e: $cd $4b $12
+    call CopyHL2DE_4                            ; $563e: $cd $4b $12
     push hl                                       ; $5641: $e5
     ld a, $04                                     ; $5642: $3e $04
     call Call_000_03a0                            ; $5644: $cd $a0 $03
     pop hl                                        ; $5647: $e1
     ld de, $ff9c                                  ; $5648: $11 $9c $ff
-    call Call_000_124b                            ; $564b: $cd $4b $12
+    call CopyHL2DE_4                            ; $564b: $cd $4b $12
     ld a, $04                                     ; $564e: $3e $04
     jp Jump_000_03a0                              ; $5650: $c3 $a0 $03
 
@@ -7588,7 +7588,7 @@ jr_006_6a00:
     ld d, h                                       ; $6a05: $54
     ld e, l                                       ; $6a06: $5d
     pop hl                                        ; $6a07: $e1
-    jp Jump_000_124b                              ; $6a08: $c3 $4b $12
+    jp CopyHL2DE_4                              ; $6a08: $c3 $4b $12
 
 
     call Call_000_2e8a                            ; $6a0b: $cd $8a $2e
@@ -10021,7 +10021,7 @@ jr_006_791f:
 
     ld hl, $7915                                  ; $7925: $21 $15 $79
     ld de, $c0a3                                  ; $7928: $11 $a3 $c0
-    jp Jump_000_1248                              ; $792b: $c3 $48 $12
+    jp CopyHL2DE_5                              ; $792b: $c3 $48 $12
 
 
 Call_006_792e:

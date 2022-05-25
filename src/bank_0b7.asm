@@ -1144,7 +1144,7 @@ jr_0b7_4492:
     ld bc, $0dce                                  ; $44be: $01 $ce $0d
     nop                                           ; $44c1: $00
     ld [$7f5e], sp                                ; $44c2: $08 $5e $7f
-    call z, Call_000_124c                         ; $44c5: $cc $4c $12
+    db $cc, $4c, $12                              ; $44c5: $cc $4c $12
     add hl, hl                                    ; $44c8: $29
     nop                                           ; $44c9: $00
     inc e                                         ; $44ca: $1c

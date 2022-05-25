@@ -2731,7 +2731,7 @@ Call_057_4b63:
     adc c                                         ; $4bed: $89
     ld c, a                                       ; $4bee: $4f
     ld a, c                                       ; $4bef: $79
-    jp z, Jump_000_11e5                           ; $4bf0: $ca $e5 $11
+    jp z, CopyHL2DE_224                           ; $4bf0: $ca $e5 $11
 
     ret                                           ; $4bf3: $c9
 

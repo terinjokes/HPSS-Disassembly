@@ -4138,7 +4138,7 @@ jr_0bd_51f9:
     jr nc, jr_0bd_5202                            ; $5200: $30 $00
 
 jr_0bd_5202:
-    jp c, Jump_000_123c                           ; $5202: $da $3c $12
+    jp c, CopyHL2DE_9                           ; $5202: $da $3c $12
 
     inc b                                         ; $5205: $04
     xor h                                         ; $5206: $ac

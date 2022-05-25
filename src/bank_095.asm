@@ -2211,7 +2211,7 @@ jr_095_4953:
     inc [hl]                                      ; $4987: $34
     dec hl                                        ; $4988: $2b
     db $fd                                        ; $4989: $fd
-    jp nz, Jump_000_11ee                          ; $498a: $c2 $ee $11
+    jp nz, CopyHL2DE_128                          ; $498a: $c2 $ee $11
 
     db $dd                                        ; $498d: $dd
     ld [hl+], a                                   ; $498e: $22

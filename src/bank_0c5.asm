@@ -4586,7 +4586,7 @@ jr_0c5_54fb:
     rst $38                                       ; $552d: $ff
     ld d, b                                       ; $552e: $50
     sbc a                                         ; $552f: $9f
-    call nz, Call_000_1200                        ; $5530: $c4 $00 $12
+    call nz, CopyHL2DE_29                        ; $5530: $c4 $00 $12
     xor c                                         ; $5533: $a9
 
 jr_0c5_5534:
@@ -5874,7 +5874,7 @@ jr_0c5_5afe:
     rst $38                                       ; $5b30: $ff
     ld d, b                                       ; $5b31: $50
     sbc a                                         ; $5b32: $9f
-    call nz, Call_000_1200                        ; $5b33: $c4 $00 $12
+    call nz, CopyHL2DE_29                        ; $5b33: $c4 $00 $12
     xor c                                         ; $5b36: $a9
 
 jr_0c5_5b37:
@@ -7078,7 +7078,7 @@ jr_0c5_60c7:
     ld l, a                                       ; $60d6: $6f
     rst $38                                       ; $60d7: $ff
     sbc a                                         ; $60d8: $9f
-    call nc, Call_000_1200                        ; $60d9: $d4 $00 $12
+    call nc, CopyHL2DE_29                        ; $60d9: $d4 $00 $12
     cp [hl]                                       ; $60dc: $be
     jr nc, jr_0c5_60e5                            ; $60dd: $30 $06
 

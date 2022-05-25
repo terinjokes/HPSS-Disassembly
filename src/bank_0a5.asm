@@ -1804,7 +1804,7 @@ jr_0a5_4761:
     cp $01                                        ; $477c: $fe $01
     db $fd                                        ; $477e: $fd
     ld [bc], a                                    ; $477f: $02
-    call Call_000_1206                            ; $4780: $cd $06 $12
+    call CopyHL2DE_27                            ; $4780: $cd $06 $12
     jr nz, jr_0a5_4785                            ; $4783: $20 $00
 
 jr_0a5_4785:
@@ -10544,7 +10544,7 @@ jr_0a5_6cc1:
     sub $f8                                       ; $6cea: $d6 $f8
     and e                                         ; $6cec: $a3
     db $fc                                        ; $6ced: $fc
-    call nc, Call_000_1236                        ; $6cee: $d4 $36 $12
+    call nc, CopyHL2DE_11                        ; $6cee: $d4 $36 $12
     nop                                           ; $6cf1: $00
     inc d                                         ; $6cf2: $14
     nop                                           ; $6cf3: $00

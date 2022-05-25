@@ -10209,7 +10209,7 @@ jr_042_6c01:
     ret                                           ; $6c2a: $c9
 
 
-    call nz, Call_000_11f9                        ; $6c2b: $c4 $f9 $11
+    db $c4, $f9, $11                              ; $6c2b: $c4 $f9 $11
     cp [hl]                                       ; $6c2e: $be
     sub h                                         ; $6c2f: $94
     push hl                                       ; $6c30: $e5

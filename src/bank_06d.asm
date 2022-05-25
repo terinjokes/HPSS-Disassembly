@@ -14646,7 +14646,7 @@ Call_06d_7f17:
     ld [hl], l                                    ; $7f1d: $75
     cp e                                          ; $7f1e: $bb
     add c                                         ; $7f1f: $81
-    call nz, Call_000_1206                        ; $7f20: $c4 $06 $12
+    call nz, CopyHL2DE_27                        ; $7f20: $c4 $06 $12
     ld e, l                                       ; $7f23: $5d
     dec e                                         ; $7f24: $1d
     or d                                          ; $7f25: $b2

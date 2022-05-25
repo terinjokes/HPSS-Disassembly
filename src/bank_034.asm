@@ -2119,7 +2119,7 @@ jr_034_48d4:
     ld d, [hl]                                    ; $48fa: $56
     push de                                       ; $48fb: $d5
     rst $38                                       ; $48fc: $ff
-    call c, Call_000_11f7                         ; $48fd: $dc $f7 $11
+    call c, CopyHL2DE_32                         ; $48fd: $dc $f7 $11
     xor d                                         ; $4900: $aa
 
 Call_034_4901:
@@ -5743,7 +5743,7 @@ jr_034_5872:
 
     ld bc, $36ae                                  ; $58cb: $01 $ae $36
     halt                                          ; $58ce: $76
-    call nz, Call_000_1225                        ; $58cf: $c4 $25 $12
+    db $c4, $25, $12                              ; $58cf: $c4 $25 $12
     ld a, [$ac12]                                 ; $58d2: $fa $12 $ac
     ld h, e                                       ; $58d5: $63
     db $dd                                        ; $58d6: $dd

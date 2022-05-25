@@ -2338,7 +2338,7 @@ jr_032_4a21:
     rlca                                          ; $4a40: $07
     dec e                                         ; $4a41: $1d
     or h                                          ; $4a42: $b4
-    call nc, Call_000_1203                        ; $4a43: $d4 $03 $12
+    call nc, CopyHL2DE_28                        ; $4a43: $d4 $03 $12
     sub [hl]                                      ; $4a46: $96
     and d                                         ; $4a47: $a2
     jr jr_032_4a21                                ; $4a48: $18 $d7

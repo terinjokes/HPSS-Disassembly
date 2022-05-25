@@ -6870,7 +6870,7 @@ jr_072_5c3f:
     sub l                                         ; $5ce3: $95
     cp l                                          ; $5ce4: $bd
     ld b, d                                       ; $5ce5: $42
-    jp z, Jump_000_1235                           ; $5ce6: $ca $35 $12
+    db $ca, $35, $12                              ; $5ce6: $ca $35 $12
 
     db $ed                                        ; $5ce9: $ed
     nop                                           ; $5cea: $00

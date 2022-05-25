@@ -3404,7 +3404,7 @@ jr_06c_4dcf:
     add h                                         ; $4ee3: $84
     ld b, l                                       ; $4ee4: $45
     cp l                                          ; $4ee5: $bd
-    call nc, Call_000_124f                        ; $4ee6: $d4 $4f $12
+    db $d4, $4f, $12                              ; $4ee6: $d4 $4f $12
     dec sp                                        ; $4ee9: $3b
     dec d                                         ; $4eea: $15
     ld [hl+], a                                   ; $4eeb: $22

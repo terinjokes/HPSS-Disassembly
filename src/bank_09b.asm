@@ -6628,7 +6628,7 @@ jr_09b_5cda:
     dec l                                         ; $5ce4: $2d
     jp nz, $e295                                  ; $5ce5: $c2 $95 $e2
 
-    jp z, Jump_000_1204                           ; $5ce8: $ca $04 $12
+    db $ca, $04, $12                              ; $5ce8: $ca $04 $12
 
     nop                                           ; $5ceb: $00
     adc d                                         ; $5cec: $8a

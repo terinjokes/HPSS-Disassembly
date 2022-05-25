@@ -3948,7 +3948,7 @@ Jump_005_55c3:
     ldh [rSVBK], a                                ; $56df: $e0 $70
     ld hl, $d080                                  ; $56e1: $21 $80 $d0
     ld de, $d000                                  ; $56e4: $11 $00 $d0
-    call Call_000_11f4                            ; $56e7: $cd $f4 $11
+    call CopyHL2DE_64                            ; $56e7: $cd $f4 $11
     pop af                                        ; $56ea: $f1
     ldh [rSVBK], a                                ; $56eb: $e0 $70
     ld hl, $4e0c                                  ; $56ed: $21 $0c $4e
@@ -4639,7 +4639,7 @@ Jump_005_59d9:
     ld de, $d400                                  ; $5b46: $11 $00 $d4
     inc de                                        ; $5b49: $13
     inc hl                                        ; $5b4a: $23
-    call Call_000_122d                            ; $5b4b: $cd $2d $12
+    call CopyHL2DE_14                            ; $5b4b: $cd $2d $12
     ld a, $05                                     ; $5b4e: $3e $05
     ldh [rSVBK], a                                ; $5b50: $e0 $70
 
@@ -6552,7 +6552,7 @@ jr_005_656e:
     push de                                       ; $656e: $d5
     ld hl, $caff                                  ; $656f: $21 $ff $ca
     ld de, $ff9c                                  ; $6572: $11 $9c $ff
-    call Call_000_124b                            ; $6575: $cd $4b $12
+    call CopyHL2DE_4                            ; $6575: $cd $4b $12
     pop de                                        ; $6578: $d1
 
 jr_005_6579:
@@ -7284,7 +7284,7 @@ jr_005_6941:
     ldh [rSVBK], a                                ; $69ea: $e0 $70
     ld hl, $d28f                                  ; $69ec: $21 $8f $d2
     ld de, $d000                                  ; $69ef: $11 $00 $d0
-    call Call_000_11ee                            ; $69f2: $cd $ee $11
+    call CopyHL2DE_128                            ; $69f2: $cd $ee $11
     pop af                                        ; $69f5: $f1
     ldh [rSVBK], a                                ; $69f6: $e0 $70
     pop de                                        ; $69f8: $d1
@@ -7462,9 +7462,9 @@ jr_005_6941:
     ldh [rSVBK], a                                ; $6afb: $e0 $70
     ld de, $d28f                                  ; $6afd: $11 $8f $d2
     ld hl, $d080                                  ; $6b00: $21 $80 $d0
-    call Call_000_11f4                            ; $6b03: $cd $f4 $11
+    call CopyHL2DE_64                            ; $6b03: $cd $f4 $11
     ld de, $d040                                  ; $6b06: $11 $40 $d0
-    call Call_000_11f4                            ; $6b09: $cd $f4 $11
+    call CopyHL2DE_64                            ; $6b09: $cd $f4 $11
     xor a                                         ; $6b0c: $af
     call Call_005_7f74                            ; $6b0d: $cd $74 $7f
     pop af                                        ; $6b10: $f1
@@ -7484,7 +7484,7 @@ jr_005_6941:
     ldh [rSVBK], a                                ; $6b2a: $e0 $70
     ld hl, $d28f                                  ; $6b2c: $21 $8f $d2
     ld de, $d000                                  ; $6b2f: $11 $00 $d0
-    call Call_000_11f4                            ; $6b32: $cd $f4 $11
+    call CopyHL2DE_64                            ; $6b32: $cd $f4 $11
     pop af                                        ; $6b35: $f1
     ldh [rSVBK], a                                ; $6b36: $e0 $70
     ld a, $01                                     ; $6b38: $3e $01
@@ -8302,7 +8302,7 @@ jr_005_70aa:
 jr_005_70b5:
     ld hl, $c274                                  ; $70b5: $21 $74 $c2
     ld de, $ff92                                  ; $70b8: $11 $92 $ff
-    call Call_000_1251                            ; $70bb: $cd $51 $12
+    call CopyHL2DE_2                            ; $70bb: $cd $51 $12
     ld a, $03                                     ; $70be: $3e $03
     ldh [$dc], a                                  ; $70c0: $e0 $dc
     jp Jump_005_73d9                              ; $70c2: $c3 $d9 $73
@@ -8338,7 +8338,7 @@ jr_005_70e1:
 jr_005_70ec:
     ld hl, $c274                                  ; $70ec: $21 $74 $c2
     ld de, $ff92                                  ; $70ef: $11 $92 $ff
-    call Call_000_1251                            ; $70f2: $cd $51 $12
+    call CopyHL2DE_2                            ; $70f2: $cd $51 $12
     pop hl                                        ; $70f5: $e1
     ld de, $0048                                  ; $70f6: $11 $48 $00
     ld a, l                                       ; $70f9: $7d
@@ -8365,7 +8365,7 @@ jr_005_710b:
 jr_005_7116:
     ld hl, $c272                                  ; $7116: $21 $72 $c2
     ld de, $ff90                                  ; $7119: $11 $90 $ff
-    call Call_000_1251                            ; $711c: $cd $51 $12
+    call CopyHL2DE_2                            ; $711c: $cd $51 $12
     jp Jump_005_6ce5                              ; $711f: $c3 $e5 $6c
 
 
@@ -10269,7 +10269,7 @@ Call_005_7c9a:
 jr_005_7cc3:
     ld hl, $d000                                  ; $7cc3: $21 $00 $d0
     ld de, $d080                                  ; $7cc6: $11 $80 $d0
-    call Call_000_11ee                            ; $7cc9: $cd $ee $11
+    call CopyHL2DE_128                            ; $7cc9: $cd $ee $11
     pop af                                        ; $7ccc: $f1
     ldh [rSVBK], a                                ; $7ccd: $e0 $70
     call Call_000_258a                            ; $7ccf: $cd $8a $25
@@ -10325,7 +10325,7 @@ jr_005_7cc3:
     call Call_000_112f                            ; $7d26: $cd $2f $11
     ld hl, $d0c0                                  ; $7d29: $21 $c0 $d0
     ld de, $d040                                  ; $7d2c: $11 $40 $d0
-    call Call_000_11f4                            ; $7d2f: $cd $f4 $11
+    call CopyHL2DE_64                            ; $7d2f: $cd $f4 $11
     pop af                                        ; $7d32: $f1
     ldh [rSVBK], a                                ; $7d33: $e0 $70
     pop de                                        ; $7d35: $d1
@@ -10398,7 +10398,7 @@ jr_005_7d78:
     push de                                       ; $7d9b: $d5
     ld hl, $d0c0                                  ; $7d9c: $21 $c0 $d0
     ld de, $d040                                  ; $7d9f: $11 $40 $d0
-    call Call_000_11f4                            ; $7da2: $cd $f4 $11
+    call CopyHL2DE_64                            ; $7da2: $cd $f4 $11
     pop de                                        ; $7da5: $d1
     ld a, e                                       ; $7da6: $7b
     call Call_005_7bf1                            ; $7da7: $cd $f1 $7b

@@ -677,7 +677,7 @@ jr_0c3_526a:
     ld d, a                                       ; $52a5: $57
     ld a, [de]                                    ; $52a6: $1a
     db $10                                        ; $52a7: $10
-    call Call_000_1236                            ; $52a8: $cd $36 $12
+    call CopyHL2DE_11                            ; $52a8: $cd $36 $12
     cpl                                           ; $52ab: $2f
     ld b, b                                       ; $52ac: $40
     nop                                           ; $52ad: $00

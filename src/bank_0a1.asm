@@ -10548,7 +10548,7 @@ jr_0a1_6df5:
     cp $01                                        ; $6e10: $fe $01
     db $fd                                        ; $6e12: $fd
     ld [bc], a                                    ; $6e13: $02
-    call Call_000_1206                            ; $6e14: $cd $06 $12
+    call CopyHL2DE_27                            ; $6e14: $cd $06 $12
     jr nz, jr_0a1_6e19                            ; $6e17: $20 $00
 
 jr_0a1_6e19:

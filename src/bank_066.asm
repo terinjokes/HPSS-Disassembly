@@ -12339,7 +12339,7 @@ jr_066_7449:
     dec d                                         ; $74fa: $15
     inc l                                         ; $74fb: $2c
     ccf                                           ; $74fc: $3f
-    call Call_000_11e8                            ; $74fd: $cd $e8 $11
+    call CopyHL2DE_196                            ; $74fd: $cd $e8 $11
     ld e, $af                                     ; $7500: $1e $af
     rst $10                                       ; $7502: $d7
     db $eb                                        ; $7503: $eb

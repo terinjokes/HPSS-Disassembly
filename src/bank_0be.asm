@@ -396,7 +396,7 @@ jr_0be_418d:
     ld sp, hl                                     ; $41ac: $f9
     ld e, $d8                                     ; $41ad: $1e $d8
     scf                                           ; $41af: $37
-    jp c, Jump_000_123f                           ; $41b0: $da $3f $12
+    jp c, CopyHL2DE_8                           ; $41b0: $da $3f $12
 
     add b                                         ; $41b3: $80
     nop                                           ; $41b4: $00

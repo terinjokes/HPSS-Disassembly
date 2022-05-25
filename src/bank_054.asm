@@ -6372,7 +6372,7 @@ Jump_054_5bea:
     dec l                                         ; $5bf2: $2d
     db $fd                                        ; $5bf3: $fd
     ld [hl+], a                                   ; $5bf4: $22
-    call c, Call_000_121d                         ; $5bf5: $dc $1d $12
+    db $dc, $1d, $12                              ; $5bf5: $dc $1d $12
     inc l                                         ; $5bf8: $2c
     db $fc                                        ; $5bf9: $fc
     dec h                                         ; $5bfa: $25
@@ -13991,7 +13991,7 @@ jr_054_7d1b:
     ld e, c                                       ; $7d3a: $59
     add hl, hl                                    ; $7d3b: $29
     inc sp                                        ; $7d3c: $33
-    call c, Call_000_121d                         ; $7d3d: $dc $1d $12
+    db $dc, $1d, $12                              ; $7d3d: $dc $1d $12
     inc l                                         ; $7d40: $2c
     xor e                                         ; $7d41: $ab
     xor [hl]                                      ; $7d42: $ae

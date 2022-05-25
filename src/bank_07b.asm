@@ -3590,7 +3590,7 @@ jr_07b_4f32:
     ld e, $7a                                     ; $4fd7: $1e $7a
     ld [hl-], a                                   ; $4fd9: $32
     ld hl, $d3cf                                  ; $4fda: $21 $cf $d3
-    call nc, Call_000_1207                        ; $4fdd: $d4 $07 $12
+    db $d4, $07, $12                              ; $4fdd: $d4 $07 $12
     inc de                                        ; $4fe0: $13
     inc d                                         ; $4fe1: $14
     ld c, $46                                     ; $4fe2: $0e $46

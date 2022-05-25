@@ -5970,7 +5970,7 @@ jr_07f_5751:
     sub h                                         ; $5b78: $94
     sub l                                         ; $5b79: $95
     ei                                            ; $5b7a: $fb
-    call c, Call_000_11fc                         ; $5b7b: $dc $fc $11
+    db $dc, $fc, $11                              ; $5b7b: $dc $fc $11
     inc h                                         ; $5b7e: $24
     ld [c], a                                     ; $5b7f: $e2
     db $e3                                        ; $5b80: $e3
@@ -9169,7 +9169,7 @@ jr_07f_6804:
     jp nc, Jump_000_0f0e                          ; $6a4a: $d2 $0e $0f
 
     db $10                                        ; $6a4d: $10
-    jp nc, Jump_000_1211                          ; $6a4e: $d2 $11 $12
+    db $d2, $11, $12                              ; $6a4e: $d2 $11 $12
 
     inc de                                        ; $6a51: $13
     add b                                         ; $6a52: $80
@@ -9793,7 +9793,7 @@ jr_07f_6d3a:
     jp nc, Jump_07f_4140                          ; $6d4a: $d2 $40 $41
 
     db $10                                        ; $6d4d: $10
-    jp nc, Jump_000_1211                          ; $6d4e: $d2 $11 $12
+    db $d2, $11, $12                              ; $6d4e: $d2 $11 $12
 
     inc de                                        ; $6d51: $13
     add b                                         ; $6d52: $80
@@ -12728,7 +12728,7 @@ jr_07f_78a7:
     inc bc                                        ; $7a0c: $03
     inc bc                                        ; $7a0d: $03
     pop de                                        ; $7a0e: $d1
-    jp nc, Jump_000_1215                          ; $7a0f: $d2 $15 $12
+    jp nc, CopyHL2DE_22                          ; $7a0f: $d2 $15 $12
 
     pop de                                        ; $7a12: $d1
 
@@ -13003,7 +13003,7 @@ jr_07f_7ae5:
     jp nc, $0a09                                  ; $7b51: $d2 $09 $0a
 
     rrca                                          ; $7b54: $0f
-    jp nc, Jump_000_1215                          ; $7b55: $d2 $15 $12
+    jp nc, CopyHL2DE_22                          ; $7b55: $d2 $15 $12
 
     inc de                                        ; $7b58: $13
     jp nc, Jump_000_100f                          ; $7b59: $d2 $0f $10
@@ -13378,7 +13378,7 @@ jr_07f_7ae5:
     jp nc, Jump_000_0a73                          ; $7d31: $d2 $73 $0a
 
     ld [hl], h                                    ; $7d34: $74
-    jp nc, Jump_000_1215                          ; $7d35: $d2 $15 $12
+    jp nc, CopyHL2DE_22                          ; $7d35: $d2 $15 $12
 
     inc de                                        ; $7d38: $13
     ld [hl], l                                    ; $7d39: $75
@@ -13524,7 +13524,7 @@ jr_07f_7ae5:
     add b                                         ; $7dec: $80
     add b                                         ; $7ded: $80
     pop de                                        ; $7dee: $d1
-    jp nc, Jump_000_1215                          ; $7def: $d2 $15 $12
+    jp nc, CopyHL2DE_22                          ; $7def: $d2 $15 $12
 
     pop de                                        ; $7df2: $d1
     ld [hl], l                                    ; $7df3: $75

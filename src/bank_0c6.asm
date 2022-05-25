@@ -7851,7 +7851,7 @@ jr_0c6_61cd:
     ld e, a                                       ; $6265: $5f
     nop                                           ; $6266: $00
     nop                                           ; $6267: $00
-    call c, Call_000_1200                         ; $6268: $dc $00 $12
+    call c, CopyHL2DE_29                         ; $6268: $dc $00 $12
     ld a, [bc]                                    ; $626b: $0a
     nop                                           ; $626c: $00
     ld [hl], l                                    ; $626d: $75
