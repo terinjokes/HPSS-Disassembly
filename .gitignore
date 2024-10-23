@@ -1,0 +1,6 @@
+# compiled objects
+*.o
+
+# compiled roms
+*.gbc
+*.gb
