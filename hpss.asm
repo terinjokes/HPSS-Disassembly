@@ -6,7 +6,22 @@ INCBIN "baserom.gbc",$0,$100
     ds $150 - $104
 
 Start:
-INCBIN "baserom.gbc",$150,$4000-$150
+    and a                       ; clear flags
+    cp BOOTUP_A_CGB             ; is Game Boy Color?
+
+    ld a, $00                   ; set a to 0
+    jr nz, .notGBC              ; if not GBC:
+    inc a                       ;   increment a (a=1)
+
+.notGBC
+    ldh [$ef], a                ; save GBC value
+    ld sp, $cfff                ; setup stack pointer
+    ldh a, [$ef]
+    or a
+    call z, $2808               ; call if not GBC
+
+INCBIN "baserom.gbc",$163,$4000-$163
+
 
 SECTION "bank1", ROMX, BANK[$1]
 INCBIN "baserom.gbc",$4000,$4000

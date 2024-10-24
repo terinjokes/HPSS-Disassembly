@@ -10,8 +10,8 @@ endif
 
 all: hpss.gbc
 
-hpss.o: hpss.asm
-	rgbasm -o $@ $<
+hpss.o: hpss.asm include/hardware.inc
+	rgbasm -P include/hardware.inc -o $@ $(filter %.asm, $<)
 
 hpss.gbc: hpss.o
 	rgblink -o $@ $<
